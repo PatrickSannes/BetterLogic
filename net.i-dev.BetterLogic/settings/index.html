@@ -1,0 +1,131 @@
+﻿<!doctype html>
+<html ng-app="variableApp">
+<head>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css" />
+    <script type="text/javascript" src="/manager/webserver/assets/js/angular.js"></script>
+    <script type="text/javascript" src="smart-table.min.js"></script>
+    <script type="text/javascript" src="variableController.js"></script>
+
+
+</head>
+
+<body ng-controller="VariableSettingsController as vm">
+    <h2>Variable management</h2>
+    <p>Be aware that removing variables could corrupt flows that are using that variable.</p>
+    <div >
+        <div class="panel panel-default">
+            <div class="panel-heading">Add variable</div>
+            <div class="panel-body">
+                <form role="form">
+                    <div class="form-group">
+                        <label for="variableName">Variable name</label>
+                        <input class="form-control" id="variableName" type="text" ng-model="vm.newVariable.name" placeholder="Name"><span class="error">{{vm.errorMessage}}</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="variableType">Variable type</label>
+                        <select class="form-control" name="variableType" id="variableType" ng-model="vm.newVariable.type" ng-change="vm.selectUpdate(vm.newVariable.type)">
+                            <option value disbled="disabled" selected="selected">Select a value type</option>
+                            <option value="string">String</option>
+                            <option value="bool">Boolean</option>
+                            <option value="number">Number</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="variableValue">Variable value</label>
+                        <div ng-switch on="vm.newVariable.type">
+                            <div ng-switch-when="bool"><div ng-include="'addbool.html'"></div></div>
+                            <div ng-switch-when="number"><div ng-include="'addnumber.html'"></div></div>
+                            <div ng-switch-default><div ng-include="'addstring.html'"><</div></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-default" type="button" ng-disabled="!vm.newVariable.name||!vm.newVariable.type" ng-click="vm.addVariable()">Add variable</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <table st-safe-src="vm.variables" st-table="vm.displayedVariables" class="table table-striped">
+            <thead>
+                <tr>
+                    <th st-sort="name">Name</th>
+                    <th st-sort="type">Type</th>
+                    <th st-sort="value">Value</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th>
+                        <input st-search="name" placeholder="search for name" class="input-sm form-control" type="search" />
+                    </th>
+                    <th>
+                        <input st-search="type" placeholder="search for type" class="input-sm form-control" type="search" />
+                    </th>
+                    <th>
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="variable in vm.displayedVariables" ng-include="vm.getTemplate(variable)"></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script type="text/ng-template" id="display">
+        <td>{{variable.name}}</td>
+        <td>{{variable.type}}</td>
+        <td>{{variable.value}}</td>
+        <td>
+            <button ng-click="vm.editVariable(variable)">Edit</button>
+            <button ng-click="vm.removeVariable($index)">Delete</button>
+        </td>
+    </script>
+
+    <script type="text/ng-template" id="edit">
+        <td>{{vm.selected.name}}</td>
+        <td>{{vm.selected.type}}</td>
+        <td>
+            <div ng-switch on="vm.selected.type">
+                <div ng-switch-when="bool"><div ng-include="'editbool.html'"></div></div>
+                <div ng-switch-when="number"><div ng-include="'editnumber.html'"></div></div>
+                <div ng-switch-default><div ng-include="'editstring.html'"><</div></div>
+            </div>
+        </td>
+        <td>
+            <button ng-click="vm.saveVariable($index)">Save</button>
+            <button ng-click="vm.reset()">Cancel</button>
+        </td>
+    </script>
+
+    <script type="text/ng-template" id="addnumber.html">
+        <input class="form-control" id="variableValue" type="number" ng-disabled="!vm.newVariable.name||!vm.newVariable.type" ng-model="vm.newVariable.value" placeholder="value">
+    </script>
+    <script type="text/ng-template" id="addstring.html">
+        <input class="form-control" id="variableValue" type="text" ng-disabled="!vm.newVariable.name||!vm.newVariable.type" ng-model="vm.newVariable.value" placeholder="value">
+    </script>
+    <script type="text/ng-template" id="addbool.html">
+        <input id="variableValue" type="checkbox" ng-disabled="!vm.newVariable.name||!vm.newVariable.type" ng-model="vm.newVariable.value" placeholder="value">
+    </script>
+    <script type="text/ng-template" id="editnumber.html">
+        <input class="form-control" id="variableValue" type="number" ng-model="vm.selected.value" placeholder="value">
+    </script>
+    <script type="text/ng-template" id="editstring.html">
+        <input class="form-control" id="variableValue" type="text" ng-model="vm.selected.value" placeholder="value">
+    </script>
+    <script type="text/ng-template" id="editbool.html">
+        <input id="variableValue" type="checkbox" ng-model="vm.selected.value" placeholder="value">
+    </script>
+<script>
+    var homeboy;
+    // Initialize Homey
+    function onHomeyReady() {
+        Homey.ready();
+        var scope = angular.element(document.getElementById('variableName')).scope();
+        scope.$apply(function () {
+            scope.vm.setHomey(Homey);
+        });
+    }
+
+</script>
+</body>
+</html>

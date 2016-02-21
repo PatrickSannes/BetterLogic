@@ -1,0 +1,319 @@
+{
+  "id": "net.i-dev.betterlogic",
+  "name": {
+    "en": "Better Logic"
+  },
+  "version": "0.0.1",
+  "compatibility": "0.x || 1.x",
+  "author": {
+    "name": "Patrick Sannes",
+    "email": "patrick@i-dev.net"
+  },
+  "images": {
+    "large": "./assets/images/large.jpg",
+    "small": "./assets/images/small.jpg"
+  },
+  "category": "internet",
+  "dependencies": { },
+  "flow": {
+    "triggers": [
+      {
+        "id": "if_variable_changed",
+        "title": {
+          "en": "A variable changed"
+        },
+        "tokens": [
+          {
+            "name": "variable",
+            "title": {
+              "en": "Variable"
+            },
+            "example": {
+              "en": "Variable"
+            }
+          },
+          {
+            "name": "value",
+            "title": {
+              "en": "Value"
+            },
+            "example": {
+              "en": "Value"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Variable name"
+            }
+          }
+        ]
+      },
+      {
+        "id": "debug_any_variable_changed",
+        "title": {
+          "en": "Any variable changed (DEBUG)"
+        },
+        "tokens": [
+          {
+            "name": "variable",
+            "title": {
+              "en": "Variable"
+            },
+            "example": {
+              "en": "Variable"
+            }
+          },
+          {
+            "name": "value",
+            "title": {
+              "en": "Value"
+            },
+            "example": {
+              "en": "Value"
+            }
+          }
+        ]
+      }
+    ],
+    "conditions": [
+           {
+        "id": "variable_contains",
+        "title": {
+          "en": "!{{contains|does not contain}}"
+        },
+        "droptoken": true,
+        "args": [
+          {
+            "name": "contains_string",
+            "type": "text",
+            "placeholder": {
+              "en": "value"
+            }
+          }
+        ]
+      },
+      {
+        "id": "variable_matches",
+        "title": {
+          "en": "!{{is exact|is not exactly}} :"
+        },
+        "droptoken": true,
+        "args": [
+          {
+            "name": "match_exact",
+            "type": "text",
+            "placeholder": {
+              "en": "value"
+            }
+          }
+        ]
+      },
+      {
+        "id": "variable_greater_than",
+        "title": {
+          "en": "!{{|not}} greater than :"
+        },
+        "droptoken": true,
+        "args": [
+          {
+            "name": "greater_than",
+            "type": "number",
+            "placeholder": {
+              "en": "value"
+            }
+          }
+        ]
+      },
+      {
+        "id": "variable_less_than",
+        "title": {
+          "en": "!{{|not}} less than"
+        },
+        "droptoken": true,
+        "args": [
+          {
+            "name": "less_than",
+            "type": "number",
+            "placeholder": {
+              "en": "value"
+            }
+          }
+        ]
+      },
+      {
+        "id": "variable_bool",
+        "title": {
+          "en": "!{{is true|is false}}"
+        },
+        "droptoken": true
+      },
+       {
+        "id": "if_variable_exists",
+        "title": {
+          "en": "A variable exists !{{|not}}"
+        },
+        "tokens": [
+          {
+            "name": "Variable Name",
+            "title": {
+              "en": "Variable"
+            },
+            "example": {
+              "en": "Variable"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Variable name"
+            }
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "set_string_variable",
+        "title": {
+          "en": "Set string variable"
+        },
+        "args": [
+          {
+            "name": "variable",
+            "type": "text",
+            "placeholder": {
+              "en": "name"
+            }
+          },
+          {
+            "name": "value",
+            "type": "text",
+            "placeholder": {
+              "en": "value"
+            }
+          }
+        ]
+      },
+      {
+        "id": "set_number_variable",
+        "title": {
+          "en": "Set number variable"
+        },
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "name"
+            }
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "placeholder": {
+              "en": "value"
+            }
+          }
+        ]
+      },
+      {
+        "id": "increment_number_variable",
+        "title": {
+          "en": "Increment number variable"
+        },
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "name"
+            }
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "placeholder": {
+              "en": "value"
+            }
+          }
+        ]
+      },
+      {
+        "id": "decrement_number_variable",
+        "title": {
+          "en": "Decrement number variable"
+        },
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "name"
+            }
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "placeholder": {
+              "en": "value"
+            }
+          }
+        ]
+      }
+      ,
+      {
+        "id": "set_bool_variable",
+        "title": {
+          "en": "Set bool variable"
+        },
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "name"
+            }
+          },
+          {
+            "name": "bool_value",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "true",
+                "label": { "en": "True" }
+              },
+              {
+                "id": "false",
+                "label": { "en": "False" }
+              }
+            ]
+          }
+        ]
+      }
+      ,
+      {
+        "id": "flip_bool_variable",
+        "title": {
+          "en": "Flip bool variable"
+        },
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "name"
+            }
+          }
+        ]
+      }
+
+    ]
+  }
+}

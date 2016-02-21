@@ -3,6 +3,9 @@
   "name": {
     "en": "Better Logic"
   },
+ "description": {
+        "en": "A better logic app"
+    },
   "version": "0.0.1",
   "compatibility": "0.x || 1.x",
   "author": {

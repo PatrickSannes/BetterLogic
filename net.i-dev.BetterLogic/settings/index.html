@@ -123,7 +123,7 @@
         Homey.ready();
         var scope = angular.element(document.getElementById('variableName')).scope();
         scope.$apply(function () {
-            scope.vm.setHomey(Homey);
+            scope.vm.setHomey(Homey,scope);
         });
     }
 

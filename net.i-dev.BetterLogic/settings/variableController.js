@@ -1,21 +1,23 @@
 ﻿angular.module('variableApp', ['smart-table'])
     .controller('VariableSettingsController', function() {
         var vm = this;
-        vm.variables = [];
-        vm.displayedVariables = [];
+        //vm.variables = [];
+        //vm.displayedVariables = [];
         vm.errorMessage = '';
         vm.selected = {};
         vm.homey;
     
-        vm.setHomey = function(homey) {
+        vm.setHomey = function(homey,scope) {
             vm.homey = homey;
             vm.homey.get('variables', function(err, variables) {
                 console.log(variables);
                 if (!vm.variables) {
                     vm.variables = [];
-                }
-                vm.variables = variables;
-                vm.displayedVariables = variables;
+            }
+            scope.$apply(function() {
+                    vm.variables = variables;
+                    vm.displayedVariables = variables;
+                });
             });
         }
         vm.addVariable = function() {

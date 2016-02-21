@@ -3,26 +3,25 @@
 var variables = [];
 var newVar;
 var receivedVariables = [];
-var receivedName = '';
-var receivedTempVariables = false;
-var receivedVariableName = false;
+var receivedVariableName = '';
+var hasReceivedVariables = false;
+var hasReceivedVariableName = false;
 
 var self = module.exports = {
     init: function () {
         //Homey.manager('settings').on('set', function(settingsname) { TODO Implement setting change help variable.
         Homey.manager('settings').on('set', function (variableName) {
             if (variableName == 'variables') {
+                Homey.log(1);
                 receivedVariables = Homey.manager("settings").get('variables');
-                receivedTempVariables = true;
+                hasReceivedVariables = true;
             }
             if (variableName == 'changedVariable') {
+                Homey.log(2);
                 receivedVariableName = Homey.manager("settings").get('changedVariable');
-                receivedVariableName = true;
+                hasReceivedVariableName = true;
             }
-
-            if (receivedTempVariables && receivedVariableName) {
-                updateVariables();
-            }
+            tryUpdateVariables();
         });
 
 //Homey.manager('flow').on('trigger.if_variable_changed.variable.autocomplete', function (callback, value) {
@@ -119,8 +118,13 @@ var self = module.exports = {
             }
         }
 
-        function updateVariables() {
-            Homey.log(variables);
+        function tryUpdateVariables() {
+            if (hasReceivedVariables && hasReceivedVariableName) {
+                Homey.log(receivedVariables);
+                Homey.log(receivedVariableName);
+                hasReceivedVariables = false;
+                hasReceivedVariableName = false;
+            }
         }
     }
 };

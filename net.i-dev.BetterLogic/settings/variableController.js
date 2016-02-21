@@ -6,7 +6,7 @@
         vm.errorMessage = '';
         vm.selected = {};
         vm.homey;
-
+    
         vm.setHomey = function(homey) {
             vm.homey = homey;
             vm.homey.get('variables', function(err, variables) {
@@ -29,14 +29,19 @@
                 value: vm.newVariable.value
             };
             vm.variables.push(variable);
-            storeVariable(vm.variables);
+            storeVariable(angular.copy(vm.variables), variable.name);
             vm.errorMessage = '';
             vm.newVariable = {}
         };
-
-        vm.removeVariable = function(index) {
+        vm.deleteAll = function() {
+            vm.homey.set('variables', []);
+            vm.variables = [];
+            vm.displayedVariables = [];
+        }
+        vm.removeVariable = function (index) {
+            var toDeleteVariable = vm.variables[index];
             vm.variables.splice(index, 1);
-            storeVariable(vm.variables);
+            storeVariable(vm.variables, toDeleteVariable.name);
         };
 
         vm.editVariable = function(variable) {
@@ -45,9 +50,10 @@
 
         vm.saveVariable = function(idx) {
             vm.variables[idx] = angular.copy(vm.selected);
-            vm.reset();
+            console.log(vm.selected);
             vm.displayedVariables = vm.variables;
-            storeVariable(vm.variables);
+            storeVariable(vm.variables, vm.selected.name);
+            vm.reset();
         };
         vm.reset = function() {
             vm.selected = {};
@@ -71,7 +77,10 @@
             else return 'display';
         };
 
-        function storeVariable(variable) {
+    function storeVariable(variable, variableName) {
+        console.log(variable);
+        console.log(variableName);
             vm.homey.set('variables', variable);
+            vm.homey.set('changedVariable', variableName);
         }
     });

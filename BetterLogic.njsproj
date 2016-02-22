@@ -18,6 +18,11 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Compile Include="lib\autocomplete\actions.js" />
+    <Compile Include="lib\autocomplete\conditions.js" />
+    <Compile Include="lib\autocomplete\triggers.js" />
+    <Compile Include="lib\util\util.js" />
+    <Compile Include="lib\variablemanagement\variablemanagement.js" />
     <Compile Include="settings\smart-table.min.js" />
     <Compile Include="settings\variableController.js" />
     <Content Include="app.json" />
@@ -30,7 +35,11 @@
   <ItemGroup>
     <Folder Include="assets" />
     <Folder Include="assets\images\" />
+    <Folder Include="lib\autocomplete\" />
+    <Folder Include="lib\variablemanagement\" />
+    <Folder Include="lib\util\" />
     <Folder Include="locales" />
+    <Folder Include="lib\" />
     <Folder Include="settings\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />

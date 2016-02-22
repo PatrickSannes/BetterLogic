@@ -86,12 +86,40 @@
            {
         "id": "variable_contains",
         "title": {
-          "en": "!{{contains|does not contain}}"
+          "en": "!{{Text contains|Text does not contain}}"
         },
-        "droptoken": true,
+            "args": [
+              {
+                "name": "variable",
+                "type": "autocomplete",
+                "placeholder": {
+                  "en": "value"
+                }
+              },
+              {
+                "name": "value",
+                "type": "text",
+                "placeholder": {
+                  "en": "value"
+                }
+              }
+            ]
+      },
+      {
+        "id": "variable_matches_string",
+        "title": {
+          "en": "!{{Text is exact|Text is not exactly}} :"
+        },
         "args": [
           {
-            "name": "contains_string",
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "value"
+            }
+          },
+          {
+            "name": "value",
             "type": "text",
             "placeholder": {
               "en": "value"
@@ -99,20 +127,26 @@
           }
         ]
       },
-      {
-        "id": "variable_matches",
+            {
+        "id": "variable_matches_number",
         "title": {
-          "en": "!{{is exact|is not exactly}} :"
+          "en": "!{{Number is exact|Number is not exactly}} :"
         },
-        "droptoken": true,
         "args": [
           {
-            "name": "match_exact",
-            "type": "text",
-            "placeholder": {
-              "en": "value"
-            }
-          }
+                "name": "variable",
+                "type": "autocomplete",
+                "placeholder": {
+                  "en": "value"
+                }
+              },
+              {
+                "name": "value",
+                "type": "number",
+                "placeholder": {
+                  "en": "value"
+                }
+              }
         ]
       },
       {
@@ -120,15 +154,21 @@
         "title": {
           "en": "!{{|not}} greater than :"
         },
-        "droptoken": true,
         "args": [
-          {
-            "name": "greater_than",
-            "type": "number",
-            "placeholder": {
-              "en": "value"
-            }
-          }
+         {
+                "name": "variable",
+                "type": "autocomplete",
+                "placeholder": {
+                  "en": "value"
+                }
+              },
+              {
+                "name": "value",
+                "type": "number",
+                "placeholder": {
+                  "en": "value"
+                }
+              }
         ]
       },
       {
@@ -136,48 +176,36 @@
         "title": {
           "en": "!{{|not}} less than"
         },
-        "droptoken": true,
         "args": [
-          {
-            "name": "less_than",
-            "type": "number",
-            "placeholder": {
-              "en": "value"
-            }
-          }
+           {
+                "name": "variable",
+                "type": "autocomplete",
+                "placeholder": {
+                  "en": "value"
+                }
+              },
+              {
+                "name": "value",
+                "type": "number",
+                "placeholder": {
+                  "en": "value"
+                }
+              }
         ]
       },
       {
-        "id": "variable_bool",
+        "id": "variable_is_equal",
         "title": {
           "en": "!{{is true|is false}}"
         },
-        "droptoken": true
-      },
-       {
-        "id": "if_variable_exists",
-        "title": {
-          "en": "A variable exists !{{|not}}"
-        },
-        "tokens": [
-          {
-            "name": "Variable Name",
-            "title": {
-              "en": "Variable"
-            },
-            "example": {
-              "en": "Variable"
-            }
-          }
-        ],
         "args": [
-          {
-            "name": "variable",
-            "type": "autocomplete",
-            "placeholder": {
-              "en": "Variable name"
-            }
-          }
+           {
+                "name": "variable",
+                "type": "autocomplete",
+                "placeholder": {
+                  "en": "value"
+                }
+              }
         ]
       }
     ],
@@ -190,7 +218,7 @@
         "args": [
           {
             "name": "variable",
-            "type": "text",
+            "type": "autocomplete",
             "placeholder": {
               "en": "name"
             }
@@ -211,7 +239,7 @@
         },
         "args": [
           {
-            "name": "variable",
+          "name": "variable",
             "type": "autocomplete",
             "placeholder": {
               "en": "name"

@@ -9,7 +9,9 @@ var hasReceivedVariableName = false;
 
 var self = module.exports = {
     init: function () {
-        //Homey.manager('settings').on('set', function(settingsname) { TODO Implement setting change help variable.
+        variables = Homey.manager("settings").get('variables');
+        Homey.log(variables);
+
         Homey.manager('settings').on('set', function (variableName) {
             if (variableName == 'variables') {
                 Homey.log(1);
@@ -23,31 +25,51 @@ var self = module.exports = {
             }
             tryUpdateVariables();
         });
+        //Triggers autocomples
+        Homey.manager('flow').on('trigger.if_variable_changed.variable.autocomplete', function (callback, value) {
+            callback(null, variables.filter(contains(value)));
+        });
 
-//Homey.manager('flow').on('trigger.if_variable_changed.variable.autocomplete', function (callback, value) {
-//    callback(null, variables.filter(contains(value)));
-//});
-//Homey.manager('flow').on('condition.if_variable_exists.variable.autocomplete', function (callback, value) {
-//    callback(null, variables.filter(contains(value)));
-//});
-//Homey.manager('flow').on('action.set_string_variable.variable.autocomplete', function (callback, value) {
-//    callback(null, variables.filter(filterVariable(value,"string")));
-//});
-//Homey.manager('flow').on('action.set_number_variable.variable.autocomplete', function (callback, value) {
-//    callback(null, variables.filter(filterVariable(value, "number")));
-//});
-//Homey.manager('flow').on('action.set_bool_variable.variable.autocomplete', function (callback, value) {
-//    callback(null, variables.filter(filterVariable(value, "bool")));
-//});
-//Homey.manager('flow').on('action.flip_bool_variable.variable.autocomplete', function (callback, value) {
-//    callback(null, variables.filter(filterVariable(value, "bool")));
-//});
-//Homey.manager('flow').on('action.increment_number_variable.variable.autocomplete', function (callback, value) {
-//    callback(null, variables.filter(filterVariable(value, "number")));
-//});
-//Homey.manager('flow').on('action.decrement_number_variable.variable.autocomplete', function (callback, value) {
-//    callback(null, variables.filter(filterVariable(value, "number")));
-//});
+        //Conditions autocomples
+        Homey.manager('flow').on('condition.variable_contains.variable.autocomplete', function (callback, value) {
+            callback(null, variables.filter(filterVariable(value, 'string')));
+        });
+        Homey.manager('flow').on('condition.variable_matches_string.variable.autocomplete', function (callback, value) {
+            callback(null, variables.filter(filterVariable(value, 'string')));
+        });
+        Homey.manager('flow').on('condition.variable_matches_number.variable.autocomplete', function (callback, value) {
+            callback(null, variables.filter(filterVariable(value,'number')));
+        });
+        Homey.manager('flow').on('condition.variable_greater_than.variable.autocomplete', function (callback, value) {
+            callback(null, variables.filter(filterVariable(value, 'number')));
+        });
+        Homey.manager('flow').on('condition.variable_less_than.variable.autocomplete', function (callback, value) {
+            callback(null, variables.filter(filterVariable(value, 'number')));
+        });
+        Homey.manager('flow').on('condition.variable_is_equal.variable.autocomplete', function (callback, value) {
+            callback(null, variables.filter(filterVariable(value, 'bool')));
+        });
+
+        //action autocomples
+        Homey.manager('flow').on('action.set_string_variable.variable.autocomplete', function (callback, value) {
+            callback(null, variables.filter(filterVariable(value, 'string')));
+        });
+        Homey.manager('flow').on('action.set_number_variable.variable.autocomplete', function (callback, value) {
+            callback(null, variables.filter(filterVariable(value, 'number')));
+        });
+        Homey.manager('flow').on('action.increment_number_variable.variable.autocomplete', function (callback, value) {
+            callback(null, variables.filter(filterVariable(value, 'number')));
+        });
+        Homey.manager('flow').on('action.decrement_number_variable.variable.autocomplete', function (callback, value) {
+            callback(null, variables.filter(filterVariable(value, 'number')));
+        });
+        Homey.manager('flow').on('action.set_bool_variable.variable.autocomplete', function (callback, value) {
+            callback(null, variables.filter(filterVariable(value, 'bool')));
+        });
+        Homey.manager('flow').on('action.flip_bool_variable.variable.autocomplete', function (callback, value) {
+            callback(null, variables.filter(filterVariable(value, 'bool')));
+        });
+
 
         Homey.manager('flow').on('trigger.debug_any_variable_changed', function(callback, args) {
             Homey.log("trigger!!!!!!");
@@ -100,14 +122,16 @@ var self = module.exports = {
         }
 
         function findVariable(partialWord, type) {
-            return function(element) {
-                return element.name.toLowerCase().indexOf(partialWord.toLowerCase()) > -1 && element.description === type;
+            Homey.log(variables);
+            return function (element) {
+                Homey.log(element);
+                return element.name.toLowerCase().indexOf(partialWord.toLowerCase()) > -1 && element.type === type;
             }
         }
 
         function filterVariable(partialWord, type) {
             return function(element) {
-                return element.name.toLowerCase().indexOf(partialWord.query.toLowerCase()) > -1 && element.description === type;
+                return element.name.toLowerCase().indexOf(partialWord.query.toLowerCase()) > -1 && element.type === type;
             }
         }
 
@@ -120,6 +144,7 @@ var self = module.exports = {
 
         function tryUpdateVariables() {
             if (hasReceivedVariables && hasReceivedVariableName) {
+                variables = receivedVariables;
                 Homey.log(receivedVariables);
                 Homey.log(receivedVariableName);
                 hasReceivedVariables = false;

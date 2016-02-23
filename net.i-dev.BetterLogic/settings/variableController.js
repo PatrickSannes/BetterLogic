@@ -19,6 +19,14 @@
                     vm.displayedVariables = variables;
                 });
             });
+        //vm.homey.on('setVariable', function (variableName) {
+        //    console.log('get an event');
+        //    scope.$apply(function() {
+        //        vm.variables = Homey.manager("settings").get('variables');;
+        //        vm.displayedVariables = vm.variables;
+        //    });
+        //});
+
         }
         vm.addVariable = function() {
             if (vm.variables && vm.variables.filter(function(e) { return e.name == vm.newVariable.name; }).length > 0) {
@@ -43,7 +51,7 @@
         vm.removeVariable = function (index) {
             var toDeleteVariable = vm.variables[index];
             vm.variables.splice(index, 1);
-            storeVariable(vm.variables, toDeleteVariable.name);
+            storeVariable(angular.copy(vm.variables), toDeleteVariable.name);
         };
 
         vm.editVariable = function(variable) {
@@ -52,9 +60,8 @@
 
         vm.saveVariable = function(idx) {
             vm.variables[idx] = angular.copy(vm.selected);
-            console.log(vm.selected);
             vm.displayedVariables = vm.variables;
-            storeVariable(vm.variables, vm.selected.name);
+            storeVariable(angular.copy(vm.variables), vm.selected.name);
             vm.reset();
         };
         vm.reset = function() {
@@ -80,8 +87,6 @@
         };
 
     function storeVariable(variable, variableName) {
-        console.log(variable);
-        console.log(variableName);
             vm.homey.set('variables', variable);
             vm.homey.set('changedVariable', variableName);
         }

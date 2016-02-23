@@ -121,9 +121,14 @@
     // Initialize Homey
     function onHomeyReady() {
         Homey.ready();
+        console.log('lalalala');
         var scope = angular.element(document.getElementById('variableName')).scope();
         scope.$apply(function () {
             scope.vm.setHomey(Homey,scope);
+        });
+
+        Homey.on('set', function (variable) {
+            console.log(variable);
         });
     }
 

@@ -47,7 +47,7 @@
         ],
         "args": [
           {
-            "name": "variable",
+            "name": "variableName",
             "type": "autocomplete",
             "placeholder": {
               "en": "Variable name"

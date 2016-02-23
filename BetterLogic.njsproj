@@ -21,6 +21,8 @@
     <Compile Include="lib\autocomplete\actions.js" />
     <Compile Include="lib\autocomplete\conditions.js" />
     <Compile Include="lib\autocomplete\triggers.js" />
+    <Compile Include="lib\flow\actions.js" />
+    <Compile Include="lib\flow\triggers.js" />
     <Compile Include="lib\util\util.js" />
     <Compile Include="lib\variablemanagement\variablemanagement.js" />
     <Compile Include="settings\smart-table.min.js" />
@@ -36,6 +38,7 @@
     <Folder Include="assets" />
     <Folder Include="assets\images\" />
     <Folder Include="lib\autocomplete\" />
+    <Folder Include="lib\flow\" />
     <Folder Include="lib\variablemanagement\" />
     <Folder Include="lib\util\" />
     <Folder Include="locales" />

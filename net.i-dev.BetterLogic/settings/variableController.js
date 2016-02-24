@@ -1,30 +1,36 @@
 ﻿angular.module('variableApp', ['smart-table'])
-    .controller('VariableSettingsController', function() {
+    .controller('VariableSettingsController', function($scope) {
         var vm = this;
         vm.errorMessage = '';
         vm.selected = {};
         vm.homey;
     
-        vm.setHomey = function(homey,scope) {
+        vm.setHomey = function(homey, scope) {
             vm.homey = homey;
-            vm.homey.get('variables', function(err, variables) {
-                console.log(variables);
-                if (!variables) {
-                    variables = [];
-            }
-            scope.$apply(function() {
-                    vm.variables = variables;
-                    vm.displayedVariables = variables;
+            vm.homey.get('variables', function(err, newVariables) {
+                console.log(newVariables);
+                if (!newVariables) {
+                    newVariables = [];
+                }
+                scope.$apply(function() {
+                    vm.variables = newVariables;
+                    vm.displayedVariables = newVariables;
                 });
             });
-        //vm.homey.on('setVariable', function (variableName) {
-        //    console.log('get an event');
-        //    scope.$apply(function() {
-        //        vm.variables = Homey.manager("settings").get('variables');;
-        //        vm.displayedVariables = vm.variables;
-        //    });
-        //});
+            vm.homey.on('setting_changed', function(name) {
+                vm.homey.get('variables', function(err, newVariables) {
+                    console.log(newVariables);
+                    if (!newVariables) {
+                        newVariables = [];
+                    }
+                    $scope.$apply(function() {
+                        vm.variables = newVariables;
+                        vm.displayedVariables = newVariables;
+                    });
 
+                    console.log(vm.variables);
+                });
+            });
         }
         vm.addVariable = function() {
             if (vm.variables && vm.variables.filter(function(e) { return e.name == vm.newVariable.name; }).length > 0) {

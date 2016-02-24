@@ -52,6 +52,7 @@ module.exports = {
 
         Homey.manager('settings').set('variables', variables);
         triggerValueChanged(oldVariable, newVariable);
+        Homey.manager('api').realtime('setting_changed', newVariable);
     }
 }
 

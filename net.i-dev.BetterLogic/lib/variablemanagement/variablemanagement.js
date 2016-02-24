@@ -60,7 +60,6 @@ function findVariable(variables, variable) {
     })[0];
 }
 function triggerValueChanged(oldvariable, newVariable) {
-
     if (!oldvariable || oldvariable.value != newVariable.value) {
         Homey.manager('flow').trigger('if_variable_changed', { variable: newVariable.variable, value: newVariable.value });
         Homey.manager('flow').trigger('debug_any_variable_changed', { variable: newVariable.name, value: newVariable.value });

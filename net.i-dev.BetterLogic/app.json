@@ -30,17 +30,11 @@
             "name": "variable",
             "title": {
               "en": "Variable"
-            },
-            "example": {
-              "en": "Variable"
             }
           },
           {
             "name": "value",
             "title": {
-              "en": "Value"
-            },
-            "example": {
               "en": "Value"
             }
           }

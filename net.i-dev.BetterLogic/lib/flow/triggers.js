@@ -1,7 +1,7 @@
 ﻿var variableManager = require('../variablemanagement/variablemanagement.js');
 exports.createTriggers = function () {
     Homey.manager('flow').on('trigger.if_variable_changed', function (callback, args, state) {
-        Homey.log("trigger!!!!!!");
+        Homey.log("in trigger gekomen");
         Homey.log(args);
         callback(null, true); // true to make the flow continue, or false to abort
     });

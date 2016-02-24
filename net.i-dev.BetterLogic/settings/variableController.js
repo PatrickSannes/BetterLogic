@@ -1,8 +1,6 @@
 ﻿angular.module('variableApp', ['smart-table'])
     .controller('VariableSettingsController', function() {
         var vm = this;
-        //vm.variables = [];
-        //vm.displayedVariables = [];
         vm.errorMessage = '';
         vm.selected = {};
         vm.homey;
@@ -11,8 +9,8 @@
             vm.homey = homey;
             vm.homey.get('variables', function(err, variables) {
                 console.log(variables);
-                if (!vm.variables) {
-                    vm.variables = [];
+                if (!variables) {
+                    variables = [];
             }
             scope.$apply(function() {
                     vm.variables = variables;

@@ -22,6 +22,7 @@
     <Compile Include="lib\autocomplete\conditions.js" />
     <Compile Include="lib\autocomplete\triggers.js" />
     <Compile Include="lib\flow\actions.js" />
+    <Compile Include="lib\flow\conditions.js" />
     <Compile Include="lib\flow\triggers.js" />
     <Compile Include="lib\util\util.js" />
     <Compile Include="lib\variablemanagement\variablemanagement.js" />

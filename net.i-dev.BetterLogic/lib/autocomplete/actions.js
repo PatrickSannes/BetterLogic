@@ -1,6 +1,6 @@
 ﻿var util = require('../util/util.js');
 var variableManager = require('../variablemanagement/variablemanagement.js');
-exports.createActionAutocompleteActions = function () {
+exports.createAutocompleteActions = function () {
     //action autocomples
     Homey.log(variableManager.getVariables());
 

@@ -33,6 +33,9 @@ module.exports = {
     getVariables: function() {
         return variables;
     },
+    getVariable : function(variable) {
+        return findVariable(variables, variable);
+    },
     updateVariable: function (variable, value, type) {
         var oldVariable = findVariable(variables, variable);
         
@@ -61,10 +64,8 @@ function findVariable(variables, variable) {
     })[0];
 }
 function triggerValueChanged(oldvariable, newVariable) {
-    Homey.log("Value changed method");
     if (!oldvariable || oldvariable.value != newVariable.value) {
         Homey.manager('flow').trigger('if_variable_changed', { "variable" : newVariable.name, "value": newVariable.value }, {});
         Homey.manager('flow').trigger('debug_any_variable_changed', { "variable": newVariable.name, "value": newVariable.value }, { "event": "123" });   
-        Homey.log("Finish trigger flows");
     }
 }

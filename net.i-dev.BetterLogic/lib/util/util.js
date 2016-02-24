@@ -1,7 +1,5 @@
 ﻿exports.findVariable = function(partialWord, type) {
-    Homey.log(variables);
     return function(element) {
-        Homey.log(element);
         return element.name.toLowerCase().indexOf(partialWord.toLowerCase()) > -1 && element.type === type;
     }
 }

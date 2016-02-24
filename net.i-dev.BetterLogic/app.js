@@ -21,5 +21,6 @@ var self = module.exports = {
 
         flowActions.createActions();
         flowTriggers.createTriggers();
+     
     }
 };

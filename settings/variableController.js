@@ -48,7 +48,7 @@
             vm.newVariable = {}
         };
         vm.deleteAll = function() {
-            vm.homey.set('variables', []);
+            vm.homey.set('variables',null );
             vm.variables = [];
             vm.displayedVariables = [];
         }

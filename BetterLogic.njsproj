@@ -4,7 +4,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{bfc8a71d-28da-4646-a8b0-24e681ef5666}</ProjectGuid>
-    <ProjectHome>net.i-dev.BetterLogic\</ProjectHome>
+    <ProjectHome></ProjectHome>
     <ProjectView>ShowAllFiles</ProjectView>
     <StartupFile>app.js</StartupFile>
     <WorkingDirectory>.</WorkingDirectory>

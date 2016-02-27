@@ -5,6 +5,9 @@ Variables can be managed from the settings screen. All variables must be defined
 
 Any requests, please post them in https://forum.athom.com/discussion/840/better-logic-variable-management
 
+V0.0.3
+Bugfix: Add more variable checks to prevent crashes on flows that contain variables that are deleted
+
 V0.0.2
 Bugfix: Bug that prevented creating variables when app is first installed. 
 

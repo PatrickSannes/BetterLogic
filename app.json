@@ -296,7 +296,7 @@
       {
         "id": "set_bool_variable",
         "title": {
-          "en": "Set bool variable"
+          "en": "Set boolean variable"
         },
         "args": [
           {
@@ -326,7 +326,7 @@
       {
         "id": "flip_bool_variable",
         "title": {
-          "en": "Flip bool variable"
+          "en": "Flip boolean variable"
         },
         "args": [
           {

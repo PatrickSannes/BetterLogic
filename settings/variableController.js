@@ -73,7 +73,7 @@
         };
 
         vm.selectUpdate = function(type) {
-            if (type === 'bool') {
+            if (type === 'boolean') {
                 vm.newVariable.value = false;
                 return;
             }

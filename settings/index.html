@@ -26,14 +26,14 @@
                         <select class="form-control" name="variableType" id="variableType" ng-model="vm.newVariable.type" ng-change="vm.selectUpdate(vm.newVariable.type)">
                             <option value disbled="disabled" selected="selected">Select a value type</option>
                             <option value="string">String</option>
-                            <option value="bool">Boolean</option>
+                            <option value="boolean">boolean</option>
                             <option value="number">Number</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label for="variableValue">Variable value</label>
                         <div ng-switch on="vm.newVariable.type">
-                            <div ng-switch-when="bool"><div ng-include="'addbool.html'"></div></div>
+                            <div ng-switch-when="boolean"><div ng-include="'addboolean.html'"></div></div>
                             <div ng-switch-when="number"><div ng-include="'addnumber.html'"></div></div>
                             <div ng-switch-default><div ng-include="'addstring.html'"><</div></div>
                         </div>
@@ -87,7 +87,7 @@
         <td>{{vm.selected.type}}</td>
         <td>
             <div ng-switch on="vm.selected.type">
-                <div ng-switch-when="bool"><div ng-include="'editbool.html'"></div></div>
+                <div ng-switch-when="boolean"><div ng-include="'editboolean.html'"></div></div>
                 <div ng-switch-when="number"><div ng-include="'editnumber.html'"></div></div>
                 <div ng-switch-default><div ng-include="'editstring.html'"><</div></div>
             </div>
@@ -104,7 +104,7 @@
     <script type="text/ng-template" id="addstring.html">
         <input class="form-control" id="variableValue" type="text" ng-disabled="!vm.newVariable.name||!vm.newVariable.type" ng-model="vm.newVariable.value" placeholder="value">
     </script>
-    <script type="text/ng-template" id="addbool.html">
+    <script type="text/ng-template" id="addboolean.html">
         <input id="variableValue" type="checkbox" ng-disabled="!vm.newVariable.name||!vm.newVariable.type" ng-model="vm.newVariable.value" placeholder="value">
     </script>
     <script type="text/ng-template" id="editnumber.html">
@@ -113,7 +113,7 @@
     <script type="text/ng-template" id="editstring.html">
         <input class="form-control col-xs-2" id="variableValue" type="text" ng-model="vm.selected.value" placeholder="value">
     </script>
-    <script type="text/ng-template" id="editbool.html">
+    <script type="text/ng-template" id="editboolean.html">
         <input class="col-xs-2" id="variableValue" type="checkbox" ng-model="vm.selected.value" placeholder="value">
     </script>
 <script>

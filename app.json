@@ -294,9 +294,9 @@
       }
       ,
       {
-        "id": "set_bool_variable",
+        "id": "set_boolean_variable",
         "title": {
-          "en": "Set boolean variable"
+          "en": "Set booleanean variable"
         },
         "args": [
           {
@@ -307,7 +307,7 @@
             }
           },
           {
-            "name": "bool_value",
+            "name": "boolean_value",
             "type": "dropdown",
             "values": [
               {
@@ -324,9 +324,9 @@
       }
       ,
       {
-        "id": "flip_bool_variable",
+        "id": "flip_boolean_variable",
         "title": {
-          "en": "Flip boolean variable"
+          "en": "Flip booleanean variable"
         },
         "args": [
           {

@@ -4,7 +4,8 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{bfc8a71d-28da-4646-a8b0-24e681ef5666}</ProjectGuid>
-    <ProjectHome></ProjectHome>
+    <ProjectHome>
+    </ProjectHome>
     <ProjectView>ShowAllFiles</ProjectView>
     <StartupFile>app.js</StartupFile>
     <WorkingDirectory>.</WorkingDirectory>
@@ -18,6 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Compile Include="drivers\bitflip\driver.js" />
     <Compile Include="lib\autocomplete\actions.js" />
     <Compile Include="lib\autocomplete\conditions.js" />
     <Compile Include="lib\autocomplete\triggers.js" />
@@ -31,6 +33,8 @@
     <Content Include="app.json" />
     <Compile Include="app.js" />
     <Content Include="assets\icon.svg" />
+    <Content Include="drivers\bitflip\assets\icons\icon.svg" />
+    <Content Include="drivers\bitflip\pair\SelectBitFlip.html" />
     <Content Include="locales\en.json" />
     <Content Include="settings\bootstrap.css" />
     <Content Include="settings\index.html" />
@@ -38,12 +42,18 @@
   <ItemGroup>
     <Folder Include="assets" />
     <Folder Include="assets\images\" />
+    <Folder Include="drivers\bitflip\" />
+    <Folder Include="drivers\bitflip\assets\" />
+    <Folder Include="drivers\bitflip\assets\images\" />
+    <Folder Include="drivers\bitflip\assets\icons\" />
+    <Folder Include="drivers\bitflip\pair\" />
     <Folder Include="lib\autocomplete\" />
     <Folder Include="lib\flow\" />
     <Folder Include="lib\variablemanagement\" />
     <Folder Include="lib\util\" />
     <Folder Include="locales" />
     <Folder Include="lib\" />
+    <Folder Include="drivers\" />
     <Folder Include="settings\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />

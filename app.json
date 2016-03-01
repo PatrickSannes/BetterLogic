@@ -3,10 +3,10 @@
   "name": {
     "en": "Better Logic"
   },
- "description": {
-        "en": "A better logic app"
-    },
-  "version": "0.0.3",
+  "description": {
+    "en": "A better logic app"
+  },
+  "version": "0.0.4",
   "compatibility": "0.x || 1.x",
   "author": {
     "name": "Patrick Sannes",
@@ -77,27 +77,27 @@
       }
     ],
     "conditions": [
-           {
+      {
         "id": "variable_contains",
         "title": {
           "en": "!{{Text contains|Text does not contain}}"
         },
-            "args": [
-              {
-                "name": "variable",
-                "type": "autocomplete",
-                "placeholder": {
-                  "en": "value"
-                }
-              },
-              {
-                "name": "value",
-                "type": "text",
-                "placeholder": {
-                  "en": "value"
-                }
-              }
-            ]
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "value"
+            }
+          },
+          {
+            "name": "value",
+            "type": "text",
+            "placeholder": {
+              "en": "value"
+            }
+          }
+        ]
       },
       {
         "id": "variable_matches_string",
@@ -121,26 +121,26 @@
           }
         ]
       },
-            {
+      {
         "id": "variable_matches_number",
         "title": {
           "en": "!{{Number is exact|Number is not exactly}} :"
         },
         "args": [
           {
-                "name": "variable",
-                "type": "autocomplete",
-                "placeholder": {
-                  "en": "value"
-                }
-              },
-              {
-                "name": "value",
-                "type": "number",
-                "placeholder": {
-                  "en": "value"
-                }
-              }
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "value"
+            }
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "placeholder": {
+              "en": "value"
+            }
+          }
         ]
       },
       {
@@ -149,20 +149,20 @@
           "en": "!{{|not}} greater than :"
         },
         "args": [
-         {
-                "name": "variable",
-                "type": "autocomplete",
-                "placeholder": {
-                  "en": "value"
-                }
-              },
-              {
-                "name": "value",
-                "type": "number",
-                "placeholder": {
-                  "en": "value"
-                }
-              }
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "value"
+            }
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "placeholder": {
+              "en": "value"
+            }
+          }
         ]
       },
       {
@@ -171,20 +171,20 @@
           "en": "!{{|not}} less than"
         },
         "args": [
-           {
-                "name": "variable",
-                "type": "autocomplete",
-                "placeholder": {
-                  "en": "value"
-                }
-              },
-              {
-                "name": "value",
-                "type": "number",
-                "placeholder": {
-                  "en": "value"
-                }
-              }
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "value"
+            }
+          },
+          {
+            "name": "value",
+            "type": "number",
+            "placeholder": {
+              "en": "value"
+            }
+          }
         ]
       },
       {
@@ -193,13 +193,13 @@
           "en": "!{{is true|is false}}"
         },
         "args": [
-           {
-                "name": "variable",
-                "type": "autocomplete",
-                "placeholder": {
-                  "en": "value"
-                }
-              }
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "value"
+            }
+          }
         ]
       }
     ],
@@ -233,7 +233,7 @@
         },
         "args": [
           {
-          "name": "variable",
+            "name": "variable",
             "type": "autocomplete",
             "placeholder": {
               "en": "name"
@@ -291,12 +291,11 @@
             }
           }
         ]
-      }
-      ,
+      },
       {
         "id": "set_boolean_variable",
         "title": {
-          "en": "Set booleanean variable"
+          "en": "Set boolean variable"
         },
         "args": [
           {
@@ -321,12 +320,11 @@
             ]
           }
         ]
-      }
-      ,
+      },
       {
         "id": "flip_boolean_variable",
         "title": {
-          "en": "Flip booleanean variable"
+          "en": "Flip boolean variable"
         },
         "args": [
           {
@@ -340,5 +338,32 @@
       }
 
     ]
-  }
+  },
+  "drivers": [
+    {
+      "id": "bitflip",
+      "name": {
+        "en": "Boolean switch"
+      },
+      "images": {
+        "large": "drivers/bitflip/assets/images/large.jpg",
+        "small": "drivers/bitflip/assets/images/large.jpg"
+      },
+      "class": "socket",
+      "capabilities": [ "onoff" ],
+      "pair": [
+        {
+          "id": "list_booleans",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_booleans"
+          }
+        },
+        {
+          "id": "add_booleans",
+          "template": "add_devices"
+        }
+      ]
+    }
+  ]
 }

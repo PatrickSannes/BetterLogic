@@ -18,10 +18,10 @@ module.exports = [
                     callback(null, { name: variable.name, type : variable.type, value: variable.value });
                     return;
                 }
-                callback(null, "Variable not found");
+                callback("Variable not found");
                 return;
             }
-            callback(null, "Incorrect call");
+            callback("Incorrect call");
         }
     },
     {
@@ -42,7 +42,7 @@ module.exports = [
                             callback(null, "OK");
                             return;
                         }
-                        callback(null, "Incorrect value for boolean: " + args.params.value);
+                        callback("Incorrect value for boolean: " + args.params.value);
                         return;
                     }
                     if (variable.type === "number") {
@@ -52,7 +52,7 @@ module.exports = [
                             callback(null, "OK");
                             return;
                         }
-                        callback(null, "Incorrect value for number: " + args.params.value);
+                        callback("Incorrect value for number: " + args.params.value);
                         return;
 
                     }
@@ -63,17 +63,17 @@ module.exports = [
                             callback(null, "OK");
                             return;
                         }
-                        callback(null, "Incorrect value for string: " + args.params.value);
+                        callback("Incorrect value for string: " + args.params.value);
                         return;
 
                     }
                     callback(null, "OK");
                 }
-                callback(null, "Variable not found");
+                callback("Variable not found");
                 return;
 
             }
-            callback(null, "Incorect call");
+            callback("Incorect call");
             
         }
     }

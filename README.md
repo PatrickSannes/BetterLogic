@@ -12,6 +12,7 @@ Feature: Added BitFlip device to switch a boolean value from the device and phon
 Feature: Added API support to GET or SET (post) a value.
     GET: HTTP://HOMEYADDRES/api/app/net.i-dev.betterlogic/VARIABLENAME
 	POST: HTTP://HOMEYADDRES/api/app/net.i-dev.betterlogic/VARIABLENAME/VALUE  //Please ensure that the value matches the type, otherwise it will not be set.
+Feature: Add date time last changed to settings screen with format (YYYY-MM-DD HH-MM-SS)
 
 V0.0.3
 Bugfix: Add more variable checks to prevent crashes on flows that contain variables that are deleted.

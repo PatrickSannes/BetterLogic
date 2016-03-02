@@ -40,7 +40,8 @@
             var variable = {
                 name: vm.newVariable.name,
                 type: vm.newVariable.type,
-                value: vm.newVariable.value
+                value: vm.newVariable.value,
+                lastChanged: getShortDate()
             };
             vm.variables.push(variable);
             storeVariable(angular.copy(vm.variables), variable);
@@ -62,7 +63,8 @@
             vm.selected = angular.copy(variable);
         };
 
-        vm.saveVariable = function(idx) {
+    vm.saveVariable = function (idx) {
+            vm.selected.lastChanged = getShortDate();
             vm.variables[idx] = angular.copy(vm.selected);
             vm.displayedVariables = vm.variables;
             storeVariable(angular.copy(vm.variables), vm.selected);
@@ -94,4 +96,15 @@
             vm.homey.set('changedVariables', variables);
             vm.homey.set('changedVariable', variable);
         }
-    });
+});
+
+function getShortDate() {
+    now = new Date();
+    year = "" + now.getFullYear();
+    month = "" + (now.getMonth() + 1); if (month.length == 1) { month = "0" + month; }
+    day = "" + now.getDate(); if (day.length == 1) { day = "0" + day; }
+    hour = "" + now.getHours(); if (hour.length == 1) { hour = "0" + hour; }
+    minute = "" + now.getMinutes(); if (minute.length == 1) { minute = "0" + minute; }
+    second = "" + now.getSeconds(); if (second.length == 1) { second = "0" + second; }
+    return year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second;
+}

@@ -51,6 +51,7 @@
                 <tr>
                     <th st-sort="name">Name</th>
                     <th st-sort="type">Type</th>
+                    <th st-sort="type">Last changed</th>
                     <th st-sort="value">Value</th>
                     <th></th>
                 </tr>
@@ -72,9 +73,10 @@
         </table>
     </div>
 
-    <script type="text/ng-template" id="display">
+<script type="text/ng-template" id="display">
         <td>{{variable.name}}</td>
         <td>{{variable.type}}</td>
+        <td>{{variable.lastChanged}}</td>
         <td>{{variable.value}}</td>
         <td>
             <button ng-click="vm.editVariable(variable)">Edit</button>
@@ -82,9 +84,10 @@
         </td>
     </script>
 
-    <script type="text/ng-template" id="edit">
+<script type="text/ng-template" id="edit">
         <td>{{vm.selected.name}}</td>
         <td>{{vm.selected.type}}</td>
+        <td>{{variable.lastChanged}}</td>
         <td>
             <div ng-switch on="vm.selected.type">
                 <div ng-switch-when="boolean"><div ng-include="'editboolean.html'"></div></div>

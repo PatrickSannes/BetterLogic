@@ -41,7 +41,9 @@
                 name: vm.newVariable.name,
                 type: vm.newVariable.type,
                 value: vm.newVariable.value,
-                lastChanged: getShortDate()
+                hasInsights: vm.newVariable.hasInsights,
+                lastChanged: getShortDate(),
+                remove:false
             };
             vm.variables.push(variable);
             storeVariable(angular.copy(vm.variables), variable);
@@ -56,6 +58,7 @@
         vm.removeVariable = function (index) {
             var toDeleteVariable = vm.variables[index];
             vm.variables.splice(index, 1);
+            toDeleteVariable.remove = true;
             storeVariable(angular.copy(vm.variables), toDeleteVariable);
         };
 

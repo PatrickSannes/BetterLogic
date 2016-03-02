@@ -48,7 +48,7 @@ var self = module.exports =  {
     },
     pair : function(socket) {
         
-        socket.on('list_devices', function(data, callback) {
+        socket.on('list_devices', function (data, callback) {
             Homey.log('list devices');
             var vars = variableManager.getVariables();
             Homey.log(vars);

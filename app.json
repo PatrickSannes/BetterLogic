@@ -343,7 +343,7 @@
     {
       "id": "bitflip",
       "name": {
-        "en": "Boolean switch"
+        "en": "BitFlip"
       },
       "images": {
         "large": "drivers/bitflip/assets/images/large.jpg",

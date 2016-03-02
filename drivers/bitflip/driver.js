@@ -10,6 +10,16 @@ var self = module.exports =  {
         for (var x = 0; x < devices_data.length; x++) {
             devices.push(devices_data[x]);
         }
+
+        Homey.manager('settings').on('set', function(action) {
+            if (action == 'boolValueChanged') {
+                var changedVariable = Homey.manager("settings").get('boolValueChanged');
+                if (changedVariable.type == 'boolean') {
+                    module.exports.realtime({ id: changedVariable.name }, 'onoff', changedVariable.value);
+                }
+            }
+        });
+       
         callback();
     },
     capabilities: {
@@ -26,7 +36,8 @@ var self = module.exports =  {
                 var variable = variableManager.getVariable(device_data.id);
                 if (variable) {
                     variableManager.updateVariable(device_data.id, onoff, device_data.type);
-                    module.exports.realtime({ id: device_data.id }, 'onoff', onoff);
+                 
+                    //module.exports.realtime({ id: device_data.id }, 'onoff', onoff);
                     callback(null, onoff);
                     return;
                 } else {
@@ -64,14 +75,14 @@ var self = module.exports =  {
             callback(null, devices);
 
         });
-        socket.on("add_device", function (device, callback) {
-            
+        socket.on("add_device", function(device, callback) {
+
             Homey.log('add device');
-            
+
             // Store device globally
             devices.push(device);
-            
-        })
+
+        });
     }
 }
 

@@ -43,7 +43,7 @@
                 value: vm.newVariable.value
             };
             vm.variables.push(variable);
-            storeVariable(angular.copy(vm.variables), variable.name);
+            storeVariable(angular.copy(vm.variables), variable);
             vm.errorMessage = '';
             vm.newVariable = {}
         };
@@ -55,7 +55,7 @@
         vm.removeVariable = function (index) {
             var toDeleteVariable = vm.variables[index];
             vm.variables.splice(index, 1);
-            storeVariable(angular.copy(vm.variables), toDeleteVariable.name);
+            storeVariable(angular.copy(vm.variables), toDeleteVariable);
         };
 
         vm.editVariable = function(variable) {
@@ -65,7 +65,7 @@
         vm.saveVariable = function(idx) {
             vm.variables[idx] = angular.copy(vm.selected);
             vm.displayedVariables = vm.variables;
-            storeVariable(angular.copy(vm.variables), vm.selected.name);
+            storeVariable(angular.copy(vm.variables), vm.selected);
             vm.reset();
         };
         vm.reset = function() {
@@ -90,8 +90,8 @@
             else return 'display';
         };
 
-    function storeVariable(variable, variableName) {
-            vm.homey.set('variables', variable);
-            vm.homey.set('changedVariable', variableName);
+        function storeVariable(variables, variable) {
+            vm.homey.set('changedVariables', variables);
+            vm.homey.set('changedVariable', variable);
         }
     });

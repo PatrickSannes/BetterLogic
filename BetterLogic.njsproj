@@ -19,6 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
   <ItemGroup>
+    <Compile Include="api.js" />
     <Compile Include="drivers\bitflip\driver.js" />
     <Compile Include="lib\autocomplete\actions.js" />
     <Compile Include="lib\autocomplete\conditions.js" />

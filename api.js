@@ -26,7 +26,7 @@ module.exports = [
     },
     {
         description: "HTTP post value",
-        method: "post",
+        method: "put",
         path: "/:variable/:value",
         requires_authorization: false,
         fn: function (callback, args) {

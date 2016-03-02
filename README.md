@@ -11,7 +11,7 @@ Bugfix: Dropdown was not working for boolean values in the .
 Feature: Added BitFlip device to switch a boolean value from the device and phone app.
 Feature: Added API support to GET or SET (post) a value.
     GET: HTTP://HOMEYADDRES/api/app/net.i-dev.betterlogic/VARIABLENAME
-	POST: HTTP://HOMEYADDRES/api/app/net.i-dev.betterlogic/VARIABLENAME/VALUE  //Please ensure that the value matches the type, otherwise it will not be set.
+	PUT: HTTP://HOMEYADDRES/api/app/net.i-dev.betterlogic/VARIABLENAME/VALUE  //Please ensure that the value matches the type, otherwise it will not be set.
 Feature: Add date time last changed to settings screen with format (YYYY-MM-DD HH-MM-SS)
 Feature: Implement insights. (note that bool and string values are not displayed yet in the module)
 

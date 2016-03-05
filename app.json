@@ -49,6 +49,51 @@
           }
         ]
       },
+       {
+        "id": "if_number_variable_changed",
+        "title": {
+          "en": "A number variable changed"
+        },
+        "tokens": [
+          {
+            "name": "variable",
+            "title": {
+              "en": "Variable"
+            }
+          },
+          {
+            "name": "value",
+            "title": {
+              "en": "Value"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Variable name"
+            }
+          },
+          {
+            "name": "action",
+            "type": "dropdown",
+            "values":[ { "id": "changed", "label": { "en": "min. changed by" } },{ "id": "increased", "label": { "en": "min. increased with" } },{ "id": "decreased", "label": { "en": "min. decreased with" } } ],
+            "placeholder": {
+              "en": "Select action"
+            }
+          },
+                    {
+            "name": "amount",
+            "type": "number",
+            "placeholder": {
+              "en": "Variable name"
+            }
+          }
+        ]
+      }
+      ,
       {
         "id": "debug_any_variable_changed",
         "title": {

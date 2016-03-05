@@ -16,6 +16,7 @@ Feature: Added API support to GET, GET all variables and SET (post) a value.
 Feature: Add date time last changed to settings screen with format (YYYY-MM-DD HH-MM-SS)
 Feature: Implement insights. (note that bool and string values are not displayed yet in the module)
 Feature: Implement card that can set all variables. It converts the type. If the type matches the value is setted
+Feature: Implement trigger card that triggers on a number change. (minimal difference, minimal increase or minimal decrease)
 
 V0.0.3
 Bugfix: Add more variable checks to prevent crashes on flows that contain variables that are deleted.

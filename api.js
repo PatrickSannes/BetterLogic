@@ -11,8 +11,12 @@ module.exports = [
         path: "/:variable",
         requires_authorization: false,
         fn: function (callback, args) {
-            
+           
             if (args && args.params && args.params.variable) {
+                if (args.params.variable.toLowerCase() === 'all') {
+                    callback(null,variableManager.getVariables());
+                    return;
+                }
                 var variable = variableManager.getVariable(args.params.variable);
                 if(variable){
                     callback(null, { name: variable.name, type : variable.type, value: variable.value });
@@ -29,7 +33,7 @@ module.exports = [
         method: "put",
         path: "/:variable/:value",
         requires_authorization: false,
-        fn: function (callback, args) {
+        fn: function(callback, args) {
 
 
             if (args && args.params && args.params.variable && args.params.value) {
@@ -46,8 +50,7 @@ module.exports = [
                         return;
                     }
                     if (variable.type === "number") {
-                        if (isNumber(args.params.value))
-                        {
+                        if (isNumber(args.params.value)) {
                             variableManager.updateVariable(variable.name, parseFloat(args.params.value), variable.type);
                             callback(null, "OK");
                             return;
@@ -57,8 +60,7 @@ module.exports = [
 
                     }
                     if (variable.type === "string") {
-                        if (typeof args.params.value ===  "string")
-                        {
+                        if (typeof args.params.value === "string") {
                             variableManager.updateVariable(variable.name, args.params.value, variable.type);
                             callback(null, "OK");
                             return;
@@ -74,7 +76,7 @@ module.exports = [
 
             }
             callback("Incorect call");
-            
+
         }
     }
 ]

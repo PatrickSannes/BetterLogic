@@ -9,11 +9,13 @@ V0.1.0
 BREAKING CHANGE: Due to renaming bool values to boolean all variables and cards need to be re-added.
 Bugfix: Dropdown was not working for boolean values in the .
 Feature: Added BitFlip device to switch a boolean value from the device and phone app.
-Feature: Added API support to GET or SET (post) a value.
+Feature: Added API support to GET, GET all variables and SET (post) a value.
     GET: HTTP://HOMEYADDRES/api/app/net.i-dev.betterlogic/VARIABLENAME
+	GET: HTTP://HOMEYADDRES/api/app/net.i-dev.betterlogic/ALL
 	PUT: HTTP://HOMEYADDRES/api/app/net.i-dev.betterlogic/VARIABLENAME/VALUE  //Please ensure that the value matches the type, otherwise it will not be set.
 Feature: Add date time last changed to settings screen with format (YYYY-MM-DD HH-MM-SS)
 Feature: Implement insights. (note that bool and string values are not displayed yet in the module)
+Feature: Implement card that can set all variables. It converts the type. If the type matches the value is setted
 
 V0.0.3
 Bugfix: Add more variable checks to prevent crashes on flows that contain variables that are deleted.

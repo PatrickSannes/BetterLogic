@@ -80,8 +80,3 @@ module.exports = [
 ]
 
 function isNumber(obj) { return !isNaN(parseFloat(obj)) }
-
-function iskBoolean(bool) {
-    return typeof bool === 'boolean' || 
-          (typeof bool === 'object' && typeof bool.valueOf() === 'boolean');
-}

@@ -335,6 +335,28 @@
             }
           }
         ]
+      },
+      {
+        "id": "set_a_variable",
+        "title": {
+          "en": "Set a variable"
+        },
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "name"
+            }
+          },
+          {
+            "name": "value",
+            "type": "text",
+            "placeholder": {
+              "en": "value"
+            }
+          }
+        ]
       }
 
     ]

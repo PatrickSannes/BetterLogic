@@ -414,7 +414,7 @@
       },
       "images": {
         "large": "drivers/bitflip/assets/images/large.jpg",
-        "small": "drivers/bitflip/assets/images/large.jpg"
+        "small": "drivers/bitflip/assets/images/small.jpg"
       },
       "class": "socket",
       "capabilities": [ "onoff" ],

@@ -30,10 +30,10 @@
                             <option value="number">Number</option>
                         </select>
                     </div>
-                    <div class="form-group">
+                    <!--<div class="form-group">
                         <label for="useInsight">Store insight</label>
                         <input class="" id="useInsight" type="checkbox" ng-model="vm.newVariable.hasInsights" placeholder="Name"><span class="error">{{vm.errorMessage}}</span>
-                    </div>
+                    </div>-->
                     <div class="form-group">
                         <label for="variableValue">Variable value</label>
                         <div ng-switch on="vm.newVariable.type">
@@ -56,7 +56,7 @@
                     <th st-sort="name">Name</th>
                     <th st-sort="type">Type</th>
                     <th st-sort="type">Last changed</th>
-                    <th st-sort="value">Insight</th>
+                    <!--<th st-sort="value">Insight</th>-->
                     <th st-sort="value">Value</th>
                     <th></th>
                 </tr>
@@ -68,7 +68,7 @@
                     </th>
                     <th>
                     </th>
-                    <th></th>
+                    <!--<th></th>-->
                     <th></th>
                     <th></th>
                 </tr>
@@ -83,7 +83,7 @@
         <td>{{variable.name}}</td>
         <td>{{variable.type}}</td>
         <td>{{variable.lastChanged}}</td>
-        <td><input type='checkbox' disabled ng-model='variable.hasInsights' /></td>
+        <!--<td><input type='checkbox' disabled ng-model='variable.hasInsights' /></td>-->
 
         <td>{{variable.value}}</td>
         <td>
@@ -96,7 +96,7 @@
         <td>{{vm.selected.name}}</td>
         <td>{{vm.selected.type}}</td>
         <td>{{variable.lastChanged}}</td>
-        <td><input class="col-xs-2" id="variableValue" type="checkbox" ng-model="vm.selected.hasInsights" placeholder="value"></td>
+        <!--<td><input class="col-xs-2" id="variableValue" type="checkbox" ng-model="vm.selected.hasInsights" placeholder="value"></td>-->
         <td>
             <div ng-switch on="vm.selected.type">
                 <div ng-switch-when="boolean"><div ng-include="'editboolean.html'"></div></div>

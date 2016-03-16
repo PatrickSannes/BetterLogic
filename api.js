@@ -34,15 +34,19 @@ module.exports = [
         path: "/:variable/:value",
         requires_authorization: false,
         fn: function(callback, args) {
-
-
             if (args && args.params && args.params.variable && args.params.value) {
                 var variable = variableManager.getVariable(args.params.variable);
                 if (variable) {
                     if (variable.type === "boolean") {
                         Homey.log(args.params.value);
-                        if (args.params.value === "true" || args.params.value === "false") {
-                            variableManager.updateVariable(variable.name, (args.params.value === 'true'), variable.type);
+                        if (args.params.value === "true" || args.params.value === "false" || args.params.value === "toggle") {
+
+                            if (args.params.value === "toggle") {
+                                var oldVariable = variableManager.getVariable(variable.name);
+                                variableManager.updateVariable(variable.name, (!oldVariable.value), variable.type);
+                            } else {
+                                variableManager.updateVariable(variable.name, (args.params.value === 'true'), variable.type);
+                            }
                             callback(null, "OK");
                             return;
                         }

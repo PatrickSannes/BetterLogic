@@ -5,6 +5,14 @@ Variables can be managed from the settings screen. All variables must be defined
 
 Any requests, please post them in https://forum.athom.com/discussion/840/better-logic-variable-management
 
+V0.9.0
+* After testing it is very stable, so almost at version 1.
+* Removed: Insights is removed for now until Athom stabalized the API for bool, int and string
+* Feature: Add toggle to API support
+    * PUT: HTTP://HOMEYADDRES/api/app/net.i-dev.betterlogic/VARIABLENAME/toggle This will force to flip the boolean value
+* Feature: Enable authorization on the API.	   
+* Bugfix: Dont change last changed timestamp when value is edited manually but not changed.
+
 V0.1.0
 
 * BREAKING CHANGE: Due to renaming bool values to boolean all variables and cards need to be re-added.

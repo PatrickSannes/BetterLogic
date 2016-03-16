@@ -9,7 +9,7 @@ module.exports = [
         description: "HTTP get variable",
         method: "GET",
         path: "/:variable",
-        requires_authorization: false,
+        requires_authorization: true,
         fn: function (callback, args) {
            
             if (args && args.params && args.params.variable) {
@@ -32,7 +32,7 @@ module.exports = [
         description: "HTTP post value",
         method: "put",
         path: "/:variable/:value",
-        requires_authorization: false,
+        requires_authorization: true,
         fn: function(callback, args) {
             if (args && args.params && args.params.variable && args.params.value) {
                 var variable = variableManager.getVariable(args.params.variable);

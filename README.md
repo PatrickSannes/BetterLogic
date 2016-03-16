@@ -11,6 +11,7 @@ V0.9.0
 * Feature: Add toggle to API support
     * PUT: HTTP://HOMEYADDRES/api/app/net.i-dev.betterlogic/VARIABLENAME/toggle This will force to flip the boolean value
 * Feature: Enable authorization on the API.	   
+* Feature: Add 'text starts with' condition
 * Bugfix: Dont change last changed timestamp when value is edited manually but not changed.
 
 V0.1.0

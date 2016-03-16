@@ -145,6 +145,28 @@
         ]
       },
       {
+        "id": "variable_starts_with",
+        "title": {
+          "en": "!{{Text starts with|Text does not start with}}"
+        },
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "value"
+            }
+          },
+          {
+            "name": "value",
+            "type": "text",
+            "placeholder": {
+              "en": "value"
+            }
+          }
+        ]
+      },
+      {
         "id": "variable_matches_string",
         "title": {
           "en": "!{{Text is exact|Text is not exactly}} :"

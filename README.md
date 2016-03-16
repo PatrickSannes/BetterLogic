@@ -8,7 +8,7 @@ Any requests, please post them in https://forum.athom.com/discussion/840/better-
 V0.9.0
 * After testing it is very stable, so almost at version 1.
 * Removed: Insights is removed for now until Athom stabalized the API for bool, int and string
-* Feature: Add toggle to API support
+* Feature: Add toggle of boolean (true->false or false->true) to API support
     * PUT: HTTP://HOMEYADDRES/api/app/net.i-dev.betterlogic/VARIABLENAME/toggle This will force to flip the boolean value
 * Feature: Enable authorization on the API.	   
 * Feature: Add 'text starts with' condition

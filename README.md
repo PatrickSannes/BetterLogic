@@ -6,10 +6,10 @@ Variables can be managed from the settings screen. All variables must be defined
 Any requests, please post them in https://forum.athom.com/discussion/840/better-logic-variable-management
 
 V0.9.1
-* Feature: Add Mathjs.org Condition card. Currently only boolean logic is supported.
+* Feature: Add Mathjs.org Condition card. Currently only boolean logic is supported. (Be aware, there is no syntax validation)
     * For supported features see http://mathjs.org/docs/expressions/syntax.html 
 	* An example could be $var1$ > 100 and $var1$ < 200 and $bool1$
-* Feature: Add card that triggers on change of one of the specified variables
+* Feature: Add card that triggers on change of one of the specified variables (Be aware, there is no syntax validation)
 
 V0.9.0
 * After testing it is very stable, so almost at version 1.

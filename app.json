@@ -6,7 +6,7 @@
   "description": {
     "en": "A better logic app"
   },
-  "version": "0.9.0",
+  "version": "0.9.1",
   "compatibility": "0.x || 1.x",
   "author": {
     "name": "Patrick Sannes",

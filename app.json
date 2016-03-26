@@ -93,7 +93,35 @@
           }
         ]
       }
-      ,
+      ,{
+        "id": "if_one_of_variable_changed",
+        "title": {
+          "en": "One of these variables changed"
+        },
+        "tokens": [
+          {
+            "name": "variable",
+            "title": {
+              "en": "Variable"
+            }
+          },
+          {
+            "name": "value",
+            "title": {
+              "en": "Value"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "variable",
+            "type": "text",
+            "placeholder": {
+              "en": "Var1, Var2, Var3"
+            }
+          }
+        ]
+      },
       {
         "id": "debug_any_variable_changed",
         "title": {

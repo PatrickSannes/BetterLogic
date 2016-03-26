@@ -7,6 +7,9 @@ Any requests, please post them in https://forum.athom.com/discussion/840/better-
 
 V0.9.1
 * Feature: Add Mathjs.org Condition card. Currently only boolean logic is supported.
+    * For supported features see http://mathjs.org/docs/expressions/syntax.html 
+	* An example could be $var1$ > 100 and $var1$ < 200 and $bool1$
+* Feature: Add card that triggers on change of one of the specified variables
 
 V0.9.0
 * After testing it is very stable, so almost at version 1.

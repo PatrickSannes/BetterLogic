@@ -279,7 +279,7 @@
             "name": "expression",
             "type": "text",
             "placeholder": {
-              "en": "value"
+              "en": "$v1$ > 100 and $v1$ < 200 and $b1$"
             }
           }
         ]

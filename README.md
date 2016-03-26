@@ -5,6 +5,9 @@ Variables can be managed from the settings screen. All variables must be defined
 
 Any requests, please post them in https://forum.athom.com/discussion/840/better-logic-variable-management
 
+V0.9.1
+* Feature: Add Mathjs.org Condition card. Currently only boolean logic is supported.
+
 V0.9.0
 * After testing it is very stable, so almost at version 1.
 * Removed: Insights is removed for now until Athom stabalized the API for bool, int and string

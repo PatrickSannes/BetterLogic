@@ -496,6 +496,31 @@
           "template": "add_devices"
         }
       ]
+    },
+    {
+      "id": "slider",
+      "name": {
+        "en": "Slider"
+      },
+      "images": {
+        "large": "drivers/slider/assets/images/large.jpg",
+        "small": "drivers/slider/assets/images/small.jpg"
+      },
+      "class": "light",
+      "capabilities": [ "dim" ],
+      "pair": [
+        {
+          "id": "list_numbers",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_numbers"
+          }
+        },
+        {
+          "id": "add_numbers",
+          "template": "add_devices"
+        }
+      ]
     }
   ]
 }

@@ -21,6 +21,35 @@
   "flow": {
     "triggers": [
       {
+        "id": "if_variable_set",
+        "title": {
+          "en": "A variable is set"
+        },
+        "tokens": [
+          {
+            "name": "variable",
+            "title": {
+              "en": "Variable"
+            }
+          },
+          {
+            "name": "value",
+            "title": {
+              "en": "Value"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Variable name"
+            }
+          }
+        ]
+      },
+      {
         "id": "if_variable_changed",
         "title": {
           "en": "A variable changed"

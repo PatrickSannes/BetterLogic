@@ -445,6 +445,28 @@
         ]
       },
       {
+        "id": "execute_expression",
+        "title": {
+          "en": "Execute mathjs expression"
+        },
+        "args": [
+          {
+            "name": "expression",
+            "type": "text",
+            "placeholder": {
+              "en": "($n1$ * 42) + 1"
+            }
+          },
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "name"
+            }
+          }
+        ]
+      },
+      {
         "id": "set_boolean_variable",
         "title": {
           "en": "Set boolean variable"

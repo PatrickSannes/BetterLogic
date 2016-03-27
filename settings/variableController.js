@@ -67,12 +67,11 @@
         };
 
     vm.saveVariable = function (idx) {
-        if (vm.selected.value != vm.variables[idx].value) {
-            vm.selected.lastChanged = getShortDate();
-            vm.variables[idx] = angular.copy(vm.selected);
-            vm.displayedVariables = vm.variables;
-            storeVariable(angular.copy(vm.variables), vm.selected);
-        }
+        vm.selected.lastChanged = getShortDate();
+        vm.variables[idx] = angular.copy(vm.selected);
+        vm.displayedVariables = vm.variables;
+        storeVariable(angular.copy(vm.variables), vm.selected);
+
         vm.reset();
         };
         vm.reset = function() {

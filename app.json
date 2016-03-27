@@ -21,6 +21,35 @@
   "flow": {
     "triggers": [
       {
+        "id": "if_variable_changed",
+        "title": {
+          "en": "A variable changed"
+        },
+        "tokens": [
+          {
+            "name": "variable",
+            "title": {
+              "en": "Variable"
+            }
+          },
+          {
+            "name": "value",
+            "title": {
+              "en": "Value"
+            }
+          }
+        ],
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "Variable name"
+            }
+          }
+        ]
+      },
+      {
         "id": "if_variable_set",
         "title": {
           "en": "A variable is set"
@@ -50,35 +79,6 @@
         ]
       },
       {
-        "id": "if_variable_changed",
-        "title": {
-          "en": "A variable changed"
-        },
-        "tokens": [
-          {
-            "name": "variable",
-            "title": {
-              "en": "Variable"
-            }
-          },
-          {
-            "name": "value",
-            "title": {
-              "en": "Value"
-            }
-          }
-        ],
-        "args": [
-          {
-            "name": "variable",
-            "type": "autocomplete",
-            "placeholder": {
-              "en": "Variable name"
-            }
-          }
-        ]
-      },
-       {
         "id": "if_number_variable_changed",
         "title": {
           "en": "A number variable changed"
@@ -108,12 +108,25 @@
           {
             "name": "action",
             "type": "dropdown",
-            "values":[ { "id": "changed", "label": { "en": "min. changed by" } },{ "id": "increased", "label": { "en": "min. increased with" } },{ "id": "decreased", "label": { "en": "min. decreased with" } } ],
+            "values": [
+              {
+                "id": "changed",
+                "label": { "en": "min. changed by" }
+              },
+              {
+                "id": "increased",
+                "label": { "en": "min. increased with" }
+              },
+              {
+                "id": "decreased",
+                "label": { "en": "min. decreased with" }
+              }
+            ],
             "placeholder": {
               "en": "Select action"
             }
           },
-                    {
+          {
             "name": "amount",
             "type": "number",
             "placeholder": {
@@ -121,8 +134,8 @@
             }
           }
         ]
-      }
-      ,{
+      },
+      {
         "id": "if_one_of_variable_changed",
         "title": {
           "en": "One of these variables changed"

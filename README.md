@@ -1,12 +1,20 @@
 # BetterLogic
-A advanced logic library with variable management for Homey.
+An advanced logic library with variable management for Homey.
 
 Variables can be managed from the settings screen. All variables must be defined before using them in the flows.
 
 Any requests, please post them in https://forum.athom.com/discussion/840/better-logic-variable-management
 
+V0.9.2
+* Feature: Add Mathjs.org action card. Only number output is supported. (Be aware, there is no syntax validation)
+    * For supported features see http://mathjs.org/docs/expressions/syntax.html 
+	* An example could be $var1$ + 100. This is then assigned to the selected number value
+	* $timenow$ is a special variable. This will store the current time in seconds since epoch. This can be used to create a time in the future by donig $timenow$ + 1800 (half an hour)
+* Feature: Add card that triggers when a variable is set but is or is not changed
+	* The last changed date/time in the grid overview is now changed to the last set date/time
+
 V0.9.1
-* Feature: Add Mathjs.org Condition card. Currently only boolean logic is supported. (Be aware, there is no syntax validation)
+* Feature: Add Mathjs.org condition card. Currently only boolean logic is supported. (Be aware, there is no syntax validation)
     * For supported features see http://mathjs.org/docs/expressions/syntax.html 
 	* An example could be $var1$ > 100 and $var1$ < 200 and $bool1$
 * Feature: Add card that triggers on change of one of the specified variables (Be aware, there is no syntax validation)

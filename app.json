@@ -239,7 +239,7 @@
       {
         "id": "variable_matches_string",
         "title": {
-          "en": "!{{Text is exact|Text is not exactly}} :"
+          "en": "!{{Text is exact|Text is not exactly}}"
         },
         "args": [
           {
@@ -261,7 +261,7 @@
       {
         "id": "variable_matches_number",
         "title": {
-          "en": "!{{Number is exact|Number is not exactly}} :"
+          "en": "!{{Number is exact|Number is not exactly}}"
         },
         "args": [
           {
@@ -283,7 +283,7 @@
       {
         "id": "variable_greater_than",
         "title": {
-          "en": "!{{|not}} greater than :"
+          "en": "!{{|not}} greater than"
         },
         "args": [
           {

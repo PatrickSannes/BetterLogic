@@ -9,7 +9,9 @@ V0.9.2
 * Feature: Add Mathjs.org action card. Only number output is supported. (Be aware, there is no syntax validation)
     * For supported features see http://mathjs.org/docs/expressions/syntax.html 
 	* An example could be $var1$ + 100. This is then assigned to the selected number value
-	* $timenow$ is a special variable. This will retrieve the current time in seconds since epoch. This can be used to create a time in the future by donig $timenow$ + 1800 (half an hour)
+* Feature: Add $timenow$ as a special variable for mathjs. This will retrieve the current time in seconds since epoch This variable is not stored in the overview, but used in expressions.
+	* In the condition flow this can be used to test if a certain time is passed. $timenow$ > $storedTime$ + 1800 (half an hour)
+    * In the action flow this can be used to create a time in the future by donig $timenow$ + 1800 (half an hour)
 * Feature: Add card that triggers when a variable is set but is or is not changed
 	* The last changed date/time in the grid overview is now changed to the last set date/time
 

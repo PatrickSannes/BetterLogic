@@ -5,6 +5,10 @@ Variables can be managed from the settings screen. All variables must be defined
 
 Any requests, please post them in https://forum.athom.com/discussion/840/better-logic-variable-management
 
+V0.9.3
+* Hotfix: Fix variable loss after homey update to 0.8.27
+
+
 V0.9.2
 * Feature: Add Mathjs.org action card. Only number output is supported. (Be aware, there is no syntax validation)
     * For supported features see http://mathjs.org/docs/expressions/syntax.html 

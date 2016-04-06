@@ -51,7 +51,7 @@
             vm.newVariable = {}
         };
         vm.deleteAll = function() {
-            vm.homey.set('variables',null );
+            vm.homey.set('variables',[] );
             vm.variables = [];
             vm.displayedVariables = [];
         }
@@ -97,10 +97,14 @@
         };
 
         function storeVariable(variables, variable) {
-            vm.homey.set('changedVariables', variables);
-            vm.homey.set('changedVariable', variable);
+            var changeObject = {
+                variables: variables,
+                variable: variable
+            };
+
+            vm.homey.set('changedVariables', changeObject);
         }
-});
+    });
 
 function getShortDate() {
     now = new Date();

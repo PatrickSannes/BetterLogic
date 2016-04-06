@@ -5,6 +5,10 @@ Variables can be managed from the settings screen. All variables must be defined
 
 Any requests, please post them in https://forum.athom.com/discussion/840/better-logic-variable-management
 
+V0.9.4
+* Hotfix: Fix initialization of empty collection after deleted
+* Added some extra logging
+
 V0.9.3
 * Hotfix: Fix variable loss after homey update to 0.8.27
 

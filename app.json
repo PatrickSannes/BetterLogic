@@ -6,7 +6,7 @@
   "description": {
     "en": "A better logic app"
   },
-  "version": "0.9.4",
+  "version": "0.9.5",
   "compatibility": "0.x || 1.x",
   "author": {
     "name": "Patrick Sannes",
@@ -16,7 +16,7 @@
     "large": "./assets/images/large.jpg",
     "small": "./assets/images/small.jpg"
   },
-  "category": "internet",
+  "category": "tools",
   "dependencies": { },
   "flow": {
     "triggers": [

@@ -2,6 +2,9 @@
     .controller('VariableSettingsController', function($scope) {
         var vm = this;
         vm.errorMessage = '';
+        vm.showExportToggle = false;
+        vm.showImportToggle = false;
+        vm.importJson = '';
         vm.selected = {};
         vm.homey;
     
@@ -41,7 +44,6 @@
                 name: vm.newVariable.name,
                 type: vm.newVariable.type,
                 value: vm.newVariable.value,
-                hasInsights: vm.newVariable.hasInsights,
                 lastChanged: getShortDate(),
                 remove:false
             };
@@ -54,12 +56,29 @@
             vm.homey.set('variables',[] );
             vm.variables = [];
             vm.displayedVariables = [];
+            vm.homey.set('deleteAll', null);
+            
         }
         vm.removeVariable = function (index) {
             var toDeleteVariable = vm.variables[index];
             vm.variables.splice(index, 1);
             toDeleteVariable.remove = true;
             storeVariable(angular.copy(vm.variables), toDeleteVariable);
+        };
+
+        vm.showExport = function() {
+            vm.showExportToggle = !vm.showExportToggle;
+        };
+        vm.showImport = function () {
+            vm.showImportToggle = !vm.showImportToggle;
+        };
+    
+        vm.import = function () {
+            var newVars = angular.fromJson(vm.importJson);
+            vm.deleteAll();
+            vm.homey.set('variables', newVars);
+            vm.variables = newVars;
+            vm.displayedVariables = newVars;
         };
 
         vm.editVariable = function(variable) {

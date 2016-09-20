@@ -44,12 +44,30 @@
                     </div>
                     <div class="form-group">
                         <button class="btn btn-default" type="button" ng-disabled="!vm.newVariable.name||!vm.newVariable.type" ng-click="vm.addVariable()">Add variable</button>
+                        <button class="btn btn-default" type="button" ng-click="vm.showExport()">Export</button>
+                        <button class="btn btn-default" type="button" ng-click="vm.showImport()">Import</button>
                         <button class="btn btn-default" type="button" ng-click="vm.deleteAll()">Delete All</button>
                     </div>
                 </form>
             </div>
         </div>
-
+        <div ng-show="vm.showExportToggle">
+            <b>Exported values:</b><br />
+            Copy selection below to save your configuration offline.
+            <p>
+                <textarea rows="6" cols="60">{{vm.variables | json}}</textarea>
+            </p>
+        </div>
+        <div ng-show="vm.showImportToggle">
+            <b>Import values:</b><br />
+            Paste in the box below the exported values. Be aware that all existing values and insights will be removed.
+            <p>
+                <textarea rows="6" cols="60" ng-Model="vm.importJson"></textarea>
+                <div class="form-group">
+                    <button class="btn btn-default" type="button" ng-click="vm.import()">Import</button>
+                </div>
+            </p>
+        </div>
         <table st-safe-src="vm.variables" st-table="vm.displayedVariables" class="table table-striped">
             <thead>
                 <tr>

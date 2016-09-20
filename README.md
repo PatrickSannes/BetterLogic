@@ -5,6 +5,21 @@ Variables can be managed from the settings screen. All variables must be defined
 
 Any requests, please post them in https://forum.athom.com/discussion/840/better-logic-variable-management
 
+V0.9.6
+* Feature: Add decimal support in the number action cards. This will work starting from Homey V0.10
+* Feature: Turn on insights for boolean and number values. Existing variables will also be turned on
+* Feature: Implement backup and restore of variables offline 
+* Bug: Fix propagation of updates from bitflip
+* Bug: Fix a bug where setting a variable with the same value did not trigger the variable set card
+* And a special request from MartijnDeRhoter:
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="4MCP3TLK2LS3N">
+<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+
 V0.9.5
 * Switch to tools category
 

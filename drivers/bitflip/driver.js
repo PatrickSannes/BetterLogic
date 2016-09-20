@@ -11,11 +11,12 @@ var self = module.exports =  {
             devices.push(devices_data[x]);
         }
 
-        Homey.manager('settings').on('set', function(action) {
+        Homey.manager('settings').on('set', function (action) {
             if (action == 'boolValueChanged') {
                 var changedVariable = Homey.manager("settings").get('boolValueChanged');
+                Homey.log(changedVariable);
                 if (changedVariable.type == 'boolean') {
-                    module.exports.realtime({ id: changedVariable.name }, 'onoff', changedVariable.value);
+                    module.exports.realtime(changedVariable.name, 'onoff', changedVariable.value);
                 }
             }
         });
@@ -24,7 +25,7 @@ var self = module.exports =  {
     },
     capabilities: {
         onoff: {
-            get: function(device_data, callback) {
+            get: function (device_data, callback) {
                 var variable = variableManager.getVariable(device_data.id);
                 if (variable) {
                     callback(null, variable.value);
@@ -37,7 +38,7 @@ var self = module.exports =  {
                 if (variable) {
                     variableManager.updateVariable(device_data.id, onoff, device_data.type);
                  
-                    //module.exports.realtime({ id: device_data.id }, 'onoff', onoff);
+                    self.realtime(device_data, 'onoff', onoff);
                     callback(null, onoff);
                     return;
                 } else {

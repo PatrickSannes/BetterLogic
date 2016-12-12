@@ -17,7 +17,6 @@
                 }
                 scope.$apply(function() {
                     vm.variables = newVariables;
-                    vm.displayedVariables = newVariables;
                 });
             });
             vm.homey.on('setting_changed', function(name) {
@@ -28,7 +27,6 @@
                     }
                     $scope.$apply(function() {
                         vm.variables = newVariables;
-                        vm.displayedVariables = newVariables;
                     });
 
                     console.log(vm.variables);
@@ -55,14 +53,14 @@
         vm.deleteAll = function() {
             vm.homey.set('variables',[] );
             vm.variables = [];
-            vm.displayedVariables = [];
             vm.homey.set('deleteAll', null);
             
         }
-        vm.removeVariable = function (index) {
+        vm.removeVariable = function (row) {
+            var index = vm.variables.indexOf(row);
             var toDeleteVariable = vm.variables[index];
-            vm.variables.splice(index, 1);
             toDeleteVariable.remove = true;
+            vm.variables.splice(index, 1);
             storeVariable(angular.copy(vm.variables), toDeleteVariable);
         };
 
@@ -78,19 +76,19 @@
             vm.deleteAll();
             vm.homey.set('variables', newVars);
             vm.variables = newVars;
-            vm.displayedVariables = newVars;
         };
 
         vm.editVariable = function(variable) {
             vm.selected = angular.copy(variable);
         };
 
-    vm.saveVariable = function (idx) {
+    vm.saveVariable = function (row) {
         vm.selected.lastChanged = getShortDate();
-        vm.variables[idx] = angular.copy(vm.selected);
-        vm.displayedVariables = vm.variables;
+        var index = vm.variables.indexOf(row);
+        var indexDisplay = $scope.displayedCollection.indexOf(row);
+        vm.variables[index] = angular.copy(vm.selected);
+        $scope.displayedCollection[indexDisplay] = angular.copy(vm.selected);
         storeVariable(angular.copy(vm.variables), vm.selected);
-
         vm.reset();
         };
         vm.reset = function() {

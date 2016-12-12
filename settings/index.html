@@ -73,7 +73,7 @@
                 <tr>
                     <th st-sort="name">Name</th>
                     <th st-sort="type">Type</th>
-                    <th st-sort="type">Last set</th>
+                    <th st-sort="lastChanged" st-sort-default="reverse">Last set</th>
                     <!--<th st-sort="value">Insight</th>-->
                     <th st-sort="value">Value</th>
                     <th></th>
@@ -100,7 +100,7 @@
 <script type="text/ng-template" id="display">
         <td>{{variable.name}}</td>
         <td>{{variable.type}}</td>
-        <td>{{variable.lastChanged}}</td>
+        <td>{{variable.lastChanged | date:'yyyy-MM-dd HH:mm:ss'}}</td>
         <!--<td><input type='checkbox' disabled ng-model='variable.hasInsights' /></td>-->
 
         <td>{{variable.value}}</td>
@@ -113,7 +113,7 @@
 <script type="text/ng-template" id="edit">
         <td>{{vm.selected.name}}</td>
         <td>{{vm.selected.type}}</td>
-        <td>{{variable.lastChanged}}</td>
+        <td>{{variable.lastChanged | date:'yyyy-MM-dd HH:mm:ss' }}</td>
         <!--<td><input class="col-xs-2" id="variableValue" type="checkbox" ng-model="vm.selected.hasInsights" placeholder="value"></td>-->
         <td>
             <div ng-switch on="vm.selected.type">

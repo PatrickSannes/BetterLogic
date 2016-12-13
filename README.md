@@ -12,6 +12,16 @@ Any requests, please post them in https://forum.athom.com/discussion/840/better-
 <img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
 </form>
 
+V0.9.7
+* Feature: Add increment or decrement to API. Call 
+	* PUT for increment: HTTP://HOMEYADDRES/api/app/net.i-dev.betterlogic/VARIABLENAME/i/VALUE  Increments the variable with the given value
+	* PUT for decrement: HTTP://HOMEYADDRES/api/app/net.i-dev.betterlogic/VARIABLENAME/d/VALUE  Decrements the variable with the given value
+* Bug: Delete all insights on delete all
+* Typo: Change casing of boolean in the variable type dropdown
+* Bug: Fixed the date time representation in the grid
+* Bug: Fixed the variable grid. It was very broken when editing in a filtered list. Sorry for people who lost variables due to this bug.
+* Bug: Bitflip was not working after an update. This is fixed
+
 V0.9.6
 * Feature: Add decimal support in the number action cards. This will work starting from Homey V0.10
 * Feature: Turn on insights for boolean and number values. Existing variables will also be turned on

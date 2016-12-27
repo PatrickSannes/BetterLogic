@@ -7,7 +7,7 @@
     "en": "A better logic app"
   },
   "version": "0.9.7",
-  "compatibility": "0.x || 1.x",
+  "compatibility": ">=1.1",
   "author": {
     "name": "Patrick Sannes",
     "email": "patrick@i-dev.net"

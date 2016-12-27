@@ -16,11 +16,11 @@ var self = module.exports =  {
                 var changedVariable = Homey.manager("settings").get('boolValueChanged');
                 Homey.log(changedVariable);
                 if (changedVariable.type == 'boolean') {
-                    var device = devices.filter(function (dev) {
+                    var device = devices.find(function (dev) {
                         return dev.id == changedVariable.name;
                     });
                     if (device) {
-                        module.exports.realtime(device[0], 'onoff', changedVariable.value);
+                        module.exports.realtime(device, 'onoff', changedVariable.value);
                     }
                 }
             }

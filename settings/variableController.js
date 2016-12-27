@@ -51,9 +51,8 @@
             vm.newVariable = {}
         };
         vm.deleteAll = function() {
-            vm.homey.set('variables',[] );
             vm.variables = [];
-            vm.homey.set('deleteAll', null);
+            vm.homey.set('deleteAll', []);
             
         }
         vm.removeVariable = function (row) {

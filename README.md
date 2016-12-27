@@ -15,6 +15,7 @@ Any requests, please post them in https://forum.athom.com/discussion/840/better-
 V0.9.8
 * Feature: Changed the i and d in increment to increment and decrement (left the i and d for backward compatibility)
 * Bug: Replace filter with find when looking up devices
+* Bug: Fixed delete all function so it also removes all Insights
 
 V0.9.7
 * Feature: Add increment or decrement to API. Call 

@@ -12,6 +12,9 @@ Any requests, please post them in https://forum.athom.com/discussion/840/better-
 <img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
 </form>
 
+V0.9.8
+* Feature: Changed the i and d in increment to increment and decrement (left the i and d for backward compatibility)
+
 V0.9.7
 * Feature: Add increment or decrement to API. Call 
 	* PUT for increment: HTTP://HOMEYADDRES/api/app/net.i-dev.betterlogic/VARIABLENAME/i/VALUE  Increments the variable with the given value

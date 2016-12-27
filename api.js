@@ -33,8 +33,9 @@ module.exports = [
         requires_authorization: true,
         fn: function(callback, args) {
             if (args && args.params && args.params.variable && args.params.value && args.params.action) {
-                if (args.params.action !== 'i' && args.params.action !== 'd' && args.params.action !== 'I' && args.params.action !== 'D') {
-                    callback("Invalid action. Specify i for Increment and d for Decrement.");
+                if (args.params.action.toLowerCase()!== 'i' && args.params.action.toLowerCase() !== 'd' &&
+                    args.params.action.toLowerCase() !== 'increment' && args.params.action.toLowerCase() !== 'decrement' ) {
+                    callback("Invalid action. Specify increment or decrement.");
                     return;
                 }
 
@@ -47,12 +48,12 @@ module.exports = [
                     callback("Can only increment or decrement numbers");
                     return;
                 }
-                if (args.params.action === "i" || args.params.action === "I") {
+                if (args.params.action.toLowerCase() === "i" || args.params.action.toLowerCase() === "increment") {
                     variableManager.updateVariable(variable.name, variable.value + parseFloat(args.params.value), variable.type);
                     callback(null, "OK");
                     return;
                 }
-                if (args.params.action === "d" || args.params.action === "D") {
+                if (args.params.action.toLowerCase() === "d" || args.params.action.toLowerCase()=== "decrement") {
                     variableManager.updateVariable(variable.name, variable.value - parseFloat(args.params.value), variable.type);
                     callback(null, "OK");
                     return;

@@ -1,0 +1,75 @@
+﻿exports.findVariable = function (partialWord, type) {
+    return function(element) {
+        return element.name.toLowerCase().indexOf(partialWord.toLowerCase()) > -1 && element.type === type;
+    }
+}
+
+exports.filterVariable = function(partialWord, type) {
+    return function(element) {
+        return element.name.toLowerCase().indexOf(partialWord.query.toLowerCase()) > -1 && element.type === type;
+    }
+}
+
+
+exports.contains = function(partialWord) {
+    return function(element) {
+        return element.name.toLowerCase().indexOf(partialWord.query.toLowerCase()) > -1;
+    }
+}
+
+exports.buildExpression = function (expression) {
+    var variableManager = require('../variablemanagement/variablemanagement.js');
+    var arr = [],
+        re = /(\$.*?\$)/g,
+        item;
+    
+    while (item = re.exec(expression))
+        arr.push(item[1]);
+    Homey.log(arr);
+    
+    arr.forEach(function (item) {
+        var variableName = item.replace(/\$/g, "");
+        var variable = {};
+        var date = new Date();
+        Homey.log("Variable Name: " + variableName);
+        if (variableName == 'timenow') {
+            variable.value = Math.floor(Date.now() / 1000);
+        }
+        else if (variableName == '#timenow') {
+            variable.value = Math.floor(Date.now() / 1000);
+        }
+        else if (variableName == '#DD') {
+            variable.value = date.getDate();
+        }
+        else if (variableName == '#MM') {
+            variable.value = date.getMonth() + 1;
+        }
+        else if (variableName == '#YYYY') {
+            variable.value = date.getFullYear();
+        }
+        else if (variableName == '#HH') {
+            var d = new Date(date);
+<<<<<<< HEAD
+            var offset = (new Date().getTimezoneOffset() / 60) * -1;
+            var localHours = new Date(d.getTime() + offset);
+=======
+            Homey.log(new Date().getTimezoneOffset());
+                var offset = (new Date().getTimezoneOffset() / 60) * -1;
+                var localHours = new Date(d.getTime() + offset);
+>>>>>>> 11c6f3b50cb4880aeb959b788ffb771151e9d91d
+            variable.value = localHours.getHours();
+        }
+        else if (variableName == '#mm') {
+            variable.value = date.getMinutes();
+        }
+        else if (variableName == '#SS') {
+            variable.value = date.getSeconds();
+        }
+        else {
+            variable = variableManager.getVariable(variableName);
+        }
+        Homey.log("Variable value: " + variable.value);
+        expression = expression.replace(item, variable.value);
+    });
+    return expression;
+}

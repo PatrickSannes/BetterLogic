@@ -14,7 +14,6 @@ Any requests, please post them in https://forum.athom.com/discussion/840/better-
 
 V0.9.8
 * Feature: Add global TAG support
-* Feature: Added NumSlide device for numeric value changes. It ranges from 0-100 with steps of 0.5
 * Feature: Changed the i and d in increment to increment and decrement (left the i and d for backward compatibility)
 * Feature: Added #DD (day), #MM (month), #YYYY (year), #HH (hours), #mm (minutes) #SS (seconds) as reserved words next to timenow in the mathjs flows. You can now for example assign #HH to a variable to get the hours. Also I changed timenow to #timenow for consistency.
 * Bug: Replace filter with find when looking up devices

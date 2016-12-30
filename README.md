@@ -12,6 +12,9 @@ Any requests, please post them in https://forum.athom.com/discussion/840/better-
 <img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
 </form>
 
+V0.9.9
+* Hotfix: Removed the tokens from the trigger cards. If you need the value, use the TAG. Sorry if I broke your flow.
+
 V0.9.8
 * Feature: Add global TAG support
 * Feature: Changed the i and d in increment to increment and decrement (left the i and d for backward compatibility)

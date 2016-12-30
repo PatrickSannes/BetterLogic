@@ -6,7 +6,7 @@
   "description": {
     "en": "A better logic app"
   },
-  "version": "0.9.8",
+  "version": "0.9.9",
   "compatibility": ">=1.1",
   "author": {
     "name": "Patrick Sannes",
@@ -25,20 +25,6 @@
         "title": {
           "en": "A variable changed"
         },
-        "tokens": [
-          {
-            "name": "variable",
-            "title": {
-              "en": "Variable"
-            }
-          },
-          {
-            "name": "value",
-            "title": {
-              "en": "Value"
-            }
-          }
-        ],
         "args": [
           {
             "name": "variable",
@@ -54,20 +40,6 @@
         "title": {
           "en": "A variable is set"
         },
-        "tokens": [
-          {
-            "name": "variable",
-            "title": {
-              "en": "Variable"
-            }
-          },
-          {
-            "name": "value",
-            "title": {
-              "en": "Value"
-            }
-          }
-        ],
         "args": [
           {
             "name": "variable",
@@ -83,20 +55,6 @@
         "title": {
           "en": "A number variable changed"
         },
-        "tokens": [
-          {
-            "name": "variable",
-            "title": {
-              "en": "Variable"
-            }
-          },
-          {
-            "name": "value",
-            "title": {
-              "en": "Value"
-            }
-          }
-        ],
         "args": [
           {
             "name": "variable",
@@ -141,20 +99,6 @@
         "title": {
           "en": "One of these variables changed"
         },
-        "tokens": [
-          {
-            "name": "variable",
-            "title": {
-              "en": "Variable"
-            }
-          },
-          {
-            "name": "value",
-            "title": {
-              "en": "Value"
-            }
-          }
-        ],
         "args": [
           {
             "name": "variable",
@@ -169,27 +113,7 @@
         "id": "debug_any_variable_changed",
         "title": {
           "en": "Any variable changed (DEBUG)"
-        },
-        "tokens": [
-          {
-            "name": "variable",
-            "title": {
-              "en": "Variable"
-            },
-            "example": {
-              "en": "Variable"
-            }
-          },
-          {
-            "name": "value",
-            "title": {
-              "en": "Value"
-            },
-            "example": {
-              "en": "Value"
-            }
-          }
-        ]
+        }
       }
     ],
     "conditions": [

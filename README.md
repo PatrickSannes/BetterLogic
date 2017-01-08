@@ -12,6 +12,10 @@ Any requests, please post them in https://forum.athom.com/discussion/840/better-
 <img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
 </form>
 
+
+V0.9.10
+* Feature: Add numbslide device. When adding, first you have to specify the min, max and step size. After that you can select your number variable.
+
 V0.9.9
 * Hotfix: Removed the tokens from the trigger cards. If you need the value, use the TAG. Sorry if I broke your flow.
 

@@ -29,7 +29,7 @@ var self = module.exports =  {
         callback();
     },
     capabilities: {
-        numslide: {
+        dim: {
             get: function (device_data, callback) {
                 var variable = variableManager.getVariable(device_data.id);
                 if (variable) {
@@ -79,7 +79,7 @@ var self = module.exports =  {
                         value: variable.value
                     },
                     capabilitiesOptions: {
-                        numslide: {
+                        dim: {
                             title:variable.name,
                             min:myData.min,
                             max: myData.max,

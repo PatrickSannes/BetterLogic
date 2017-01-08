@@ -514,22 +514,22 @@
         "large": "drivers/numslide/assets/images/large.jpg",
         "small": "drivers/numslide/assets/images/small.jpg"
       },
-      "class": "other",
-      "capabilities": [ "numslide" ],
+      "class": "dim",
+      "capabilities": [ "dim" ],
       "mobile": {
         "components": [
           {
             "id": "sensor",
-            "capabilities": [ "numslide" ],
+            "capabilities": [ "dim" ],
             "options": {
               "icons": {
-                "numslide": "./drivers/numslide/assets/icons/icon.svg"
+                "dim": "./drivers/numslide/assets/icons/icon.svg"
               }
             }
           },
           {
             "id": "slider",
-            "capabilities": [ "numslide" ]
+            "capabilities": [ "dim" ]
           }
         ]
       },

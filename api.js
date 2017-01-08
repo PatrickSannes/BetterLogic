@@ -71,7 +71,6 @@ module.exports = [
                 var variable = variableManager.getVariable(args.params.variable);
                 if (variable) {
                     if (variable.type === "boolean") {
-                        Homey.log(args.params.value);
                         if (args.params.value === "true" || args.params.value === "false" || args.params.value === "toggle") {
 
                             if (args.params.value === "toggle") {

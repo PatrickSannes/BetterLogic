@@ -14,7 +14,12 @@ Any requests, please post them in https://forum.athom.com/discussion/840/better-
 
 
 V0.9.10
-* Feature: Add numbslide device. When adding, first you have to specify the min, max and step size. After that you can select your number variable.
+* Feature: Add NumSlide device. When adding, first you have to specify the min, max and step size. After that you can select your number variable.
+* Feature: Add Trigger variable with action cards. This trigger fires one time when being triggered
+* Feature: Add ClickMe device to create a button that can trigger
+* Feature: Add trigger to API. Call 
+	* PUT for increment: HTTP://HOMEYADDRES/api/app/net.i-dev.betterlogic/trigger/VARIABLENAME This triggers the given variable
+
 
 V0.9.9
 * Hotfix: Removed the tokens from the trigger cards. If you need the value, use the TAG. Sorry if I broke your flow.

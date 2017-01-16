@@ -481,19 +481,6 @@
 
     ]
   },
-  "capabilities": {
-    "numslide": {
-      "type": "number",
-      "title": {
-        "en": "NumSlide"
-      },
-      "getable": true,
-      "setable": true,
-      "units": {
-        "en": ""
-      }
-    }
-  },
   "drivers": [
     {
       "id": "bitflip",
@@ -561,6 +548,31 @@
         },
         {
           "id": "add_numbers",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "id": "clickme",
+      "name": {
+        "en": "ClickMe"
+      },
+      "images": {
+        "large": "drivers/clickme/assets/images/large.jpg",
+        "small": "drivers/clickme/assets/images/small.jpg"
+      },
+      "class": "button",
+      "capabilities": [ "button" ],
+      "pair": [
+        {
+          "id": "list_triggers",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_triggers"
+          }
+        },
+        {
+          "id": "add_triggers",
           "template": "add_devices"
         }
       ]

@@ -66,8 +66,6 @@ var self = module.exports =  {
                 Homey.log(variable);
                 var device = {
                         name: variable.name,
-                        state: {onoff : variable.value
-                    },
                     data: {
                         id: variable.name,
                         type: variable.type,

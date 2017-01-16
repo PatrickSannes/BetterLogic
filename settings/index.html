@@ -28,6 +28,7 @@
                             <option value="string">String</option>
                             <option value="boolean">Boolean</option>
                             <option value="number">Number</option>
+                            <option value="trigger">Trigger</option>
                         </select>
                     </div>
                     <!--<div class="form-group">
@@ -39,7 +40,8 @@
                         <div ng-switch on="vm.newVariable.type">
                             <div ng-switch-when="boolean"><div ng-include="'addboolean.html'"></div></div>
                             <div ng-switch-when="number"><div ng-include="'addnumber.html'"></div></div>
-                            <div ng-switch-default><div ng-include="'addstring.html'"><</div></div>
+                            <div ng-switch-when="string"><div ng-include="'addstring.html'"></div></div>
+                            <div ng-switch-default><div></div></div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -72,8 +74,8 @@
             <thead>
                 <tr>
                     <th st-sort="name">Name</th>
-                    <th st-sort="type">Type</th>
-                    <th st-sort="lastChanged" st-sort-default="reverse">Last set</th>
+                    <th st-sort="type" style="width: 150px;">Type</th>
+                    <th st-sort="lastChanged" style="width: 200px;" st-sort-default="reverse">Last set</th>
                     <!--<th st-sort="value">Insight</th>-->
                     <th st-sort="value">Value</th>
                     <th></th>
@@ -102,12 +104,18 @@
         <td>{{variable.type}}</td>
         <td>{{variable.lastChanged | date:'yyyy-MM-dd HH:mm:ss'}}</td>
         <!--<td><input type='checkbox' disabled ng-model='variable.hasInsights' /></td>-->
-
-        <td>{{variable.value}}</td>
+    
+        <td ng-if="variable.type === 'boolean'">{{variable.value}}</td>
+        <td ng-if="variable.type === 'number'">{{variable.value}}</td>
+        <td ng-if="variable.type === 'string'">{{variable.value}}</td>
+        <td ng-if="variable.type === 'trigger'">{{variable.value | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+        
         <td>
-            <button ng-click="vm.editVariable(variable)">Edit</button>
+            <button ng-click="vm.editVariable(variable)" ng-if="variable.type !== 'trigger'">Edit</button>
+            <button ng-click="vm.triggerVariable(variable)" ng-if="variable.type === 'trigger'">Trigger</button>
             <button ng-click="vm.removeVariable(variable)">Delete</button>
-        </td>
+               
+</td>
     </script>
 
 <script type="text/ng-template" id="edit">

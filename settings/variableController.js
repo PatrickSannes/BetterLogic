@@ -7,7 +7,7 @@
         vm.importJson = '';
         vm.selected = {};
         vm.homey;
-    
+
         vm.setHomey = function(homey, scope) {
             vm.homey = homey;
             vm.homey.get('variables', function(err, newVariables) {
@@ -43,7 +43,7 @@
                 type: vm.newVariable.type,
                 value: vm.newVariable.value,
                 lastChanged: getShortDate(),
-                remove:false
+                remove: false
             };
             vm.variables.push(variable);
             storeVariable(angular.copy(vm.variables), variable);
@@ -53,9 +53,9 @@
         vm.deleteAll = function() {
             vm.variables = [];
             vm.homey.set('deleteAll', []);
-            
+
         }
-        vm.removeVariable = function (row) {
+        vm.removeVariable = function(row) {
             var index = vm.variables.indexOf(row);
             var toDeleteVariable = vm.variables[index];
             toDeleteVariable.remove = true;
@@ -66,11 +66,11 @@
         vm.showExport = function() {
             vm.showExportToggle = !vm.showExportToggle;
         };
-        vm.showImport = function () {
+        vm.showImport = function() {
             vm.showImportToggle = !vm.showImportToggle;
         };
-    
-        vm.import = function () {
+
+        vm.import = function() {
             var newVars = angular.fromJson(vm.importJson);
             vm.deleteAll();
             vm.homey.set('variables', newVars);
@@ -81,15 +81,30 @@
             vm.selected = angular.copy(variable);
         };
 
-    vm.saveVariable = function (row) {
-        vm.selected.lastChanged = getShortDate();
-        var index = vm.variables.indexOf(row);
-        var indexDisplay = $scope.displayedCollection.indexOf(row);
-        vm.variables[index] = angular.copy(vm.selected);
-        $scope.displayedCollection[indexDisplay] = angular.copy(vm.selected);
-        storeVariable(angular.copy(vm.variables), vm.selected);
-        vm.reset();
+        vm.saveVariable = function(row) {
+            vm.selected.lastChanged = getShortDate();
+            var index = vm.variables.indexOf(row);
+            var indexDisplay = $scope.displayedCollection.indexOf(row);
+            vm.variables[index] = angular.copy(vm.selected);
+            $scope.displayedCollection[indexDisplay] = angular.copy(vm.selected);
+            storeVariable(angular.copy(vm.variables), vm.selected);
+            vm.reset();
         };
+
+        vm.triggerVariable = function(row) {
+            vm.selected = angular.copy(row);
+            vm.selected.lastChanged = getShortDate();
+            vm.selected.value = getShortDate();
+
+            var index = vm.variables.indexOf(row);
+            var indexDisplay = $scope.displayedCollection.indexOf(row);
+
+            vm.variables[index] = angular.copy(vm.selected);
+            $scope.displayedCollection[indexDisplay] = angular.copy(vm.selected);
+            storeVariable(angular.copy(vm.variables), vm.selected);
+            vm.reset();
+        };
+
         vm.reset = function() {
             vm.selected = {};
         };

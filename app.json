@@ -441,6 +441,21 @@
           }
         ]
       },
+       {
+        "id": "trigger_variable",
+        "title": {
+          "en": "Execute a trigger"
+        },
+        "args": [
+          {
+            "name": "variable",
+            "type": "autocomplete",
+            "placeholder": {
+              "en": "name"
+            }
+          }
+        ]
+      },
       {
         "id": "set_a_variable",
         "title": {

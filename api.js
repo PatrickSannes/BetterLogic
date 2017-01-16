@@ -27,6 +27,31 @@ module.exports = [
             callback("Incorrect call");
         }
     }, {
+        description: "HTTP post trigger",
+        method: "put",
+        path: "/trigger/:variable",
+        requires_authorization: true,
+        fn: function (callback, args) {
+            if (args && args.params && args.params.variable) {
+                
+                var variable = variableManager.getVariable(args.params.variable);
+                if (!variable) {
+                    callback("Variable not found");
+                    return;
+                }
+                if (variable.type !== "trigger") {
+                    callback("Only a trigger can be triggered");
+                    return;
+                }
+               
+               variableManager.updateVariable(variable.name, new Date().toISOString(), variable.type);
+                callback(null, "OK");
+                return;
+            }
+            callback("Incorect call");
+        }
+    }, 
+    {
         description: "HTTP post value",
         method: "put",
         path: "/:variable/:action/:value",

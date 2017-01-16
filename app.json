@@ -553,13 +553,13 @@
       ]
     },
     {
-      "id": "clickme",
+      "id": "trigger",
       "name": {
-        "en": "ClickMe"
+        "en": "Trigger"
       },
       "images": {
-        "large": "drivers/clickme/assets/images/large.jpg",
-        "small": "drivers/clickme/assets/images/small.jpg"
+        "large": "drivers/trigger/assets/images/large.jpg",
+        "small": "drivers/trigger/assets/images/small.jpg"
       },
       "class": "button",
       "capabilities": [ "button" ],

@@ -20,7 +20,7 @@ var self = module.exports =  {
                         return dev.id == changedVariable.name;
                     });
                     if (device) {
-                        module.exports.realtime(device, 'numslide', changedVariable.value);
+                        module.exports.realtime(device, 'dim', changedVariable.value);
                     }
                 }
             }
@@ -43,7 +43,7 @@ var self = module.exports =  {
                 if (variable) {
                     variableManager.updateVariable(device_data.id, numslide, device_data.type);
                  
-                    self.realtime(device_data, 'numslide', numslide);
+                    self.realtime(device_data, 'dim', numslide);
                     callback(null, numslide);
                     return;
                 } else {
@@ -72,11 +72,9 @@ var self = module.exports =  {
                 Homey.log(variable);
                 var device = {
                     name: variable.name,
-                    state: { numslide: variable.value },
+                    state: { dim: variable.value },
                     data: {
-                        id: variable.name,
-                        type: variable.type,
-                        value: variable.value
+                        id: variable.name
                     },
                     capabilitiesOptions: {
                         dim: {

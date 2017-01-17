@@ -74,7 +74,8 @@ var self = module.exports =  {
                     name: variable.name,
                     state: { dim: variable.value },
                     data: {
-                        id: variable.name
+                        id: variable.name,
+                        type: variable.type
                     },
                     capabilitiesOptions: {
                         dim: {

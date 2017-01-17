@@ -21,6 +21,8 @@
   <ItemGroup>
     <Compile Include="api.js" />
     <Compile Include="drivers\bitflip\driver.js" />
+    <Compile Include="drivers\numslide\driver.js" />
+    <Compile Include="drivers\trigger\driver.js" />
     <Compile Include="lib\autocomplete\actions.js" />
     <Compile Include="lib\autocomplete\conditions.js" />
     <Compile Include="lib\autocomplete\triggers.js" />
@@ -37,6 +39,15 @@
     <Content Include="assets\icon.svg" />
     <Content Include="drivers\bitflip\assets\icons\icon.svg" />
     <Content Include="drivers\bitflip\pair\SelectBitFlip.html" />
+    <Content Include="drivers\numslide\assets\icons\icon.svg" />
+    <Content Include="drivers\numslide\assets\images\large.jpg" />
+    <Content Include="drivers\numslide\assets\images\small.jpg" />
+    <Content Include="drivers\numslide\pair\SelectNumSlide.html" />
+    <Content Include="drivers\numslide\pair\start.html" />
+    <Content Include="drivers\trigger\assets\icons\icon.svg" />
+    <Content Include="drivers\trigger\assets\images\large.jpg" />
+    <Content Include="drivers\trigger\assets\images\small.jpg" />
+    <Content Include="drivers\trigger\pair\SelectClickMe.html" />
     <Content Include="locales\en.json" />
     <Content Include="settings\bootstrap.css" />
     <Content Include="settings\index.html" />
@@ -49,6 +60,16 @@
     <Folder Include="drivers\bitflip\assets\images\" />
     <Folder Include="drivers\bitflip\assets\icons\" />
     <Folder Include="drivers\bitflip\pair\" />
+    <Folder Include="drivers\numslide\" />
+    <Folder Include="drivers\numslide\assets\" />
+    <Folder Include="drivers\numslide\assets\icons\" />
+    <Folder Include="drivers\numslide\assets\images\" />
+    <Folder Include="drivers\numslide\pair\" />
+    <Folder Include="drivers\trigger\" />
+    <Folder Include="drivers\trigger\assets\" />
+    <Folder Include="drivers\trigger\assets\icons\" />
+    <Folder Include="drivers\trigger\assets\images\" />
+    <Folder Include="drivers\trigger\pair\" />
     <Folder Include="lib\autocomplete\" />
     <Folder Include="lib\flow\" />
     <Folder Include="lib\variablemanagement\" />

@@ -8,10 +8,12 @@ Any requests, please post them in https://forum.athom.com/discussion/840/better-
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="4MCP3TLK2LS3N">
-<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal â€“ The safer, easier way to pay online!">
 <img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
 </form>
 
+V0.9.11
+* Hotfix: Only store changed variables in insights to prevent storage loss
 
 V0.9.10
 * Feature: Add NumSlide device. When adding, first you have to specify the min, max and step size. After that you can select your number variable.

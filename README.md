@@ -12,6 +12,9 @@ Any requests, please post them in https://forum.athom.com/discussion/840/better-
 <img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
 </form>
 
+V0.9.12
+* Ooops, sorry :(
+
 V0.9.11
 * Hotfix: Only store changed variables in insights to prevent storage loss
 

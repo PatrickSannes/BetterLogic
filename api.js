@@ -11,10 +11,26 @@ module.exports = [
         path: "/:variable",
         requires_authorization: true,
         fn: function (callback, args) {
-           
+
             if (args && args.params && args.params.variable) {
                 if (args.params.variable.toLowerCase() === 'all') {
                     callback(null,variableManager.getVariables());
+                    return;
+                }
+                if (args.params.variable.toLowerCase() === 'allids') {
+                    var variables = variableManager.getVariables();
+
+                    var result = {};
+                    variables.forEach(function(element) {
+                        result[element.name] = {
+                            name: element.name,
+                            value: element.value,
+                            type: element.type,
+                            lastChanged: element.lastChanged
+                        };
+                    });
+
+                    callback(null, result);
                     return;
                 }
                 var variable = variableManager.getVariable(args.params.variable);
@@ -33,7 +49,7 @@ module.exports = [
         requires_authorization: true,
         fn: function (callback, args) {
             if (args && args.params && args.params.variable) {
-                
+
                 var variable = variableManager.getVariable(args.params.variable);
                 if (!variable) {
                     callback("Variable not found");
@@ -43,14 +59,14 @@ module.exports = [
                     callback("Only a trigger can be triggered");
                     return;
                 }
-               
+
                variableManager.updateVariable(variable.name, new Date().toISOString(), variable.type);
                 callback(null, "OK");
                 return;
             }
             callback("Incorect call");
         }
-    }, 
+    },
     {
         description: "HTTP post value",
         method: "put",

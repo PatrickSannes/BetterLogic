@@ -8,7 +8,7 @@
         vm.selected = {};
         vm.homey;
 
-        vm.setHomey = function(homey, scope) {
+        vm.init = function(homey, scope) {
             vm.homey = homey;
             vm.homey.get('variables', function(err, newVariables) {
                 console.log(newVariables);
@@ -19,17 +19,15 @@
                     vm.variables = newVariables;
                 });
             });
-            vm.homey.on('setting_changed', function(name) {
+            vm.homey.on('setting_changed', function (name) {
+                console.log(name);
                 vm.homey.get('variables', function(err, newVariables) {
-                    console.log(newVariables);
                     if (!newVariables) {
                         newVariables = [];
                     }
-                    $scope.$apply(function() {
+                    scope.$apply(function() {
                         vm.variables = newVariables;
                     });
-
-                    console.log(vm.variables);
                 });
             });
         }
@@ -73,7 +71,7 @@
         vm.import = function() {
             var newVars = angular.fromJson(vm.importJson);
             vm.deleteAll();
-            vm.homey.set('variables', newVars);
+           vm.homey.set('variables', newVars);
             vm.variables = newVars;
         };
 
@@ -132,11 +130,13 @@
                 variables: variables,
                 variable: variable
             };
-
-            vm.homey.set('changedVariables', changeObject);
+            console.log('change');
+            vm.homey.set('changedVariables', changeObject, function (err) { console.log(err)});
         }
     });
 
 function getShortDate() {
     return new Date().toISOString();
 }
+
+function setVariables(variables) {}

@@ -44,21 +44,21 @@
                 remove: false
             };
             vm.variables.push(variable);
-            storeVariable(angular.copy(vm.variables), variable);
+            storeVariable(variable);
             vm.errorMessage = '';
             vm.newVariable = {}
         };
-        vm.deleteAll = function() {
+        vm.deleteAll = function () {
             vm.variables = [];
-            vm.homey.set('deleteAll', []);
-
+            var changeObject = { variables: [] };
+            vm.homey.set('deleteall', changeObject, function (err) { console.log(err) });
         }
         vm.removeVariable = function(row) {
             var index = vm.variables.indexOf(row);
             var toDeleteVariable = vm.variables[index];
             toDeleteVariable.remove = true;
             vm.variables.splice(index, 1);
-            storeVariable(angular.copy(vm.variables), toDeleteVariable);
+            storeVariable(toDeleteVariable);
         };
 
         vm.showExport = function() {
@@ -71,7 +71,7 @@
         vm.import = function() {
             var newVars = angular.fromJson(vm.importJson);
             vm.deleteAll();
-           vm.homey.set('variables', newVars);
+            vm.homey.set('variables', newVars);
             vm.variables = newVars;
         };
 
@@ -85,7 +85,7 @@
             var indexDisplay = $scope.displayedCollection.indexOf(row);
             vm.variables[index] = angular.copy(vm.selected);
             $scope.displayedCollection[indexDisplay] = angular.copy(vm.selected);
-            storeVariable(angular.copy(vm.variables), vm.selected);
+            storeVariable(vm.selected);
             vm.reset();
         };
 
@@ -99,7 +99,7 @@
 
             vm.variables[index] = angular.copy(vm.selected);
             $scope.displayedCollection[indexDisplay] = angular.copy(vm.selected);
-            storeVariable(angular.copy(vm.variables), vm.selected);
+            storeVariable(vm.selected);
             vm.reset();
         };
 
@@ -125,13 +125,12 @@
             else return 'display';
         };
 
-        function storeVariable(variables, variable) {
+        function storeVariable(variable) {
             var changeObject = {
-                variables: variables,
                 variable: variable
             };
             console.log('change');
-            vm.homey.set('changedVariables', changeObject, function (err) { console.log(err)});
+            vm.homey.set('changedvariables', changeObject, function (err) { console.log(err)});
         }
     });
 

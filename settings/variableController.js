@@ -48,11 +48,10 @@
             vm.errorMessage = '';
             vm.newVariable = {}
         };
-        vm.deleteAll = function () {
+        vm.deleteAll = function() {
             vm.variables = [];
-            var changeObject = { variables: [] };
-            vm.homey.set('deleteall', changeObject, function (err) { console.log(err) });
-        }
+            deleteAllVariables();
+        };
         vm.removeVariable = function(row) {
             var index = vm.variables.indexOf(row);
             var toDeleteVariable = vm.variables[index];
@@ -129,8 +128,23 @@
             var changeObject = {
                 variable: variable
             };
-            console.log('change');
             vm.homey.set('changedvariables', changeObject, function (err) { console.log(err)});
+        }
+
+        function deleteAllVariables() {
+            //I need to pass in this dummy or else it does not work....?
+            var dummyVar = {
+                name: "",
+                type: "",
+                value: "",
+                lastChanged: getShortDate(),
+                remove: false
+            };
+            var dummyChangedObject = {
+                variable: dummyVar
+            };
+
+            vm.homey.set('deleteall', dummyChangedObject, function (err) { console.log(err)});            
         }
     });
 

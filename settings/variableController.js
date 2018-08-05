@@ -70,7 +70,9 @@
         vm.import = function() {
             var newVars = angular.fromJson(vm.importJson);
             vm.deleteAll();
-            vm.homey.set('variables', newVars);
+            newVars.forEach(function(variable) {
+                storeVariable(variable);
+            });
             vm.variables = newVars;
         };
 

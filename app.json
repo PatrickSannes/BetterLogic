@@ -485,5 +485,102 @@
       }
 
     ]
-  }
+  },
+  "drivers": [
+    {
+      "id": "bitflip",
+      "name": {
+        "en": "BitFlip"
+      },
+      "images": {
+        "large": "drivers/bitflip/assets/images/large.jpg",
+        "small": "drivers/bitflip/assets/images/small.jpg"
+      },
+      "class": "socket",
+      "capabilities": [ "onoff" ],
+      "pair": [
+        {
+          "id": "list_booleans",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_booleans"
+          }
+        },
+        {
+          "id": "add_booleans",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "id": "numslide",
+      "name": {
+        "en": "NumSlide"
+      },
+      "images": {
+        "large": "drivers/numslide/assets/images/large.jpg",
+        "small": "drivers/numslide/assets/images/small.jpg"
+      },
+      "class": "windowcoverings",
+      "capabilities": [ "dim" ],
+      "mobile": {
+        "components": [
+          {
+            "id": "sensor",
+            "capabilities": [ "dim" ],
+            "options": {
+              "icons": {
+                "dim": "./drivers/numslide/assets/icons/icon.svg"
+              }
+            }
+          },
+          {
+            "id": "slider",
+            "capabilities": [ "dim" ]
+          }
+        ]
+      },
+      "pair": [
+        {
+          "id": "start"
+        },
+        {
+          "id": "list_numbers",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_numbers"
+          }
+        },
+        {
+          "id": "add_numbers",
+          "template": "add_devices"
+        }
+      ]
+    },
+    {
+      "id": "trigger",
+      "name": {
+        "en": "Trigger"
+      },
+      "images": {
+        "large": "drivers/trigger/assets/images/large.jpg",
+        "small": "drivers/trigger/assets/images/small.jpg"
+      },
+      "class": "button",
+      "capabilities": [ "button" ],
+      "pair": [
+        {
+          "id": "list_triggers",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_triggers"
+          }
+        },
+        {
+          "id": "add_triggers",
+          "template": "add_devices"
+        }
+      ]
+    }
+  ]
 }

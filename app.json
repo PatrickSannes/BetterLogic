@@ -1,7 +1,7 @@
 {
-  "id": "net.idev.betterlogicb",
+  "id": "net.i-dev.betterlogic",
   "version": "1.0.0",
-  "compatibility": ">=1.5.0",
+  "compatibility": ">=2.0.0",
   "sdk": 2,
   "name": {
     "en": "Better Logic"

@@ -23,6 +23,15 @@
     "name": "Patrick Sannes",
     "email": "patrick@i-dev.net"
   },
+  "contributors": {
+  "developers": [
+      {
+        "name": "Job Born",
+        "email": "jobborn@gmail.com"
+      }
+    ]
+  },
+  "homeyCommunityTopicId": 5568,
   "flow": {
     "triggers": [
       {

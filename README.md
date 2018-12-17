@@ -5,7 +5,7 @@ An advanced logic library with variable management for Homey.
 
 Variables can be managed from the settings screen. All variables must be defined before using them in the flows.
 
-Any requests, please post them in https://forum.athom.com/discussion/840/better-logic-variable-management
+Any requests, please post them in https://community.athom.com/t/app-better-logic-variable-management-v1-0-0/5568
 
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
@@ -13,6 +13,8 @@ Any requests, please post them in https://forum.athom.com/discussion/840/better-
 <input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
 <img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
 </form>
+
+V1.0.1 Update link to forum.... Its just nice ;)
 
 V1.0.0
 Rewrite to SDK 2 !!

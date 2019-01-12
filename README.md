@@ -14,6 +14,8 @@ Any requests, please post them in https://community.athom.com/t/app-better-logic
 <img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
 </form>
 
+V1.0.2 Release version 1 to stable.
+
 V1.0.1 Update link to forum.... Its just nice ;)
 
 V1.0.0

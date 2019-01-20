@@ -1,31 +1,29 @@
 ﻿<head>
-    <link rel="stylesheet" type="text/css" href="/manager/devices/devicesettings/css/devicesettings.css"/>
-    <style>
-        .view {
-            width: 90% !important;
-            height: 90% !important;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="../../../assets/bootstrap.css" />
 </head>
 
-<fieldset>
-    <legend> Please provide the minimum, maximum and stepsize settings you want to use for the slider...</legend>
-    <form id="form">
-        <div class="input">
+<div class="panel-group">
+  <div class="panel panel-default">
+    <div class="panel-heading"> Please provide the minimum, maximum and stepsize settings you want to use for the slider...</div>
+    <div class="panel-body">
+        <div class="form-group">
             <label for="min">Minimum value</label>
-            <input class="control" type="number" name="min" id="min" required="required" value="0">
+            <input class="form-control" type="number" name="min" id="min" required="required" value="0">
         </div>
-        <div class="input">
+        <div class="form-group">
             <label for="max">Maximum value</label>
-            <input class="control" type="number" name="max" id="max" required="required" value="100">
+            <input class="form-control" type="number" name="max" id="max" required="required" value="100">
         </div>
-        <div class="input">
+        <div class="form-group">
             <label for="step">Stepsize</label>
-            <input class="control" type="number" name="step" id="step" required="required" value="0.5">
+            <input class="form-control" type="number" name="step" id="step" required="required" value="0.5">
         </div>
-    </form>
-    <button id="next" type="button" class="btn btn-primary">Next</button>
-</fieldset>
+    </div>
+    <div class="panel-footer">
+    <button id="next" type="button" class="btn btn-primary right">Next</button>
+    </div>
+  </div>
+</div>
 
 <script>
     $("#next").click(function () {

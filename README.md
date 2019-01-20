@@ -10,9 +10,13 @@ Any requests, please post them in https://community.athom.com/t/app-better-logic
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
 <input type="hidden" name="hosted_button_id" value="4MCP3TLK2LS3N">
-<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online!">
+<input type="image" src="https://www.paypalobjects.com/en_US/GB/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal ï¿½ The safer, easier way to pay online!">
 <img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
 </form>
+
+V1.0.3
+* Bug: Fixed new variables only showing up after the app
+* Bug: Updated styling of numslide pairing page
 
 V1.0.2 Release version 1 to stable.
 
@@ -31,7 +35,7 @@ V0.9.10
 * Feature: Add NumSlide device. When adding, first you have to specify the min, max and step size. After that you can select your number variable.
 * Feature: Add Trigger variable with action cards. This trigger fires one time when being triggered
 * Feature: Add Trigger device to create a button that can trigger
-* Feature: Add trigger to API. Call 
+* Feature: Add trigger to API. Call
 	* PUT for increment: HTTP://HOMEYADDRES/api/app/net.i-dev.betterlogic/trigger/VARIABLENAME This triggers the given variable
 
 
@@ -47,7 +51,7 @@ V0.9.8
 * Bug: Fixed delete all function so it also removes all Insights
 
 V0.9.7
-* Feature: Add increment or decrement to API. Call 
+* Feature: Add increment or decrement to API. Call
 	* PUT for increment: HTTP://HOMEYADDRES/api/app/net.i-dev.betterlogic/VARIABLENAME/i/VALUE  Increments the variable with the given value
 	* PUT for decrement: HTTP://HOMEYADDRES/api/app/net.i-dev.betterlogic/VARIABLENAME/d/VALUE  Decrements the variable with the given value
 * Bug: Delete all insights on delete all
@@ -59,7 +63,7 @@ V0.9.7
 V0.9.6
 * Feature: Add decimal support in the number action cards. This will work starting from Homey V0.10
 * Feature: Turn on insights for boolean and number values. Existing variables will also be turned on
-* Feature: Implement backup and restore of variables offline 
+* Feature: Implement backup and restore of variables offline
 * Bug: Fix propagation of updates from bitflip
 * Bug: Fix a bug where setting a variable with the same value did not trigger the variable set card
 * Added a donate button as requested by MartijnDeRhoter
@@ -77,7 +81,7 @@ V0.9.3
 
 V0.9.2
 * Feature: Add Mathjs.org action card. Only number output is supported. (Be aware, there is no syntax validation)
-    * For supported features see http://mathjs.org/docs/expressions/syntax.html 
+    * For supported features see http://mathjs.org/docs/expressions/syntax.html
 	* An example could be $var1$ + 100. This is then assigned to the selected number value
 * Feature: Add $timenow$ as a special variable for mathjs. This will retrieve the current time in seconds since epoch This variable is not stored in the overview, but used in expressions.
 	* In the condition flow this can be used to test if a certain time is passed. $timenow$ > $storedTime$ + 1800 (half an hour)
@@ -87,7 +91,7 @@ V0.9.2
 
 V0.9.1
 * Feature: Add Mathjs.org condition card. Currently only boolean logic is supported. (Be aware, there is no syntax validation)
-    * For supported features see http://mathjs.org/docs/expressions/syntax.html 
+    * For supported features see http://mathjs.org/docs/expressions/syntax.html
 	* An example could be $var1$ > 100 and $var1$ < 200 and $bool1$
 * Feature: Add card that triggers on change of one of the specified variables (Be aware, there is no syntax validation)
 
@@ -118,7 +122,7 @@ V0.0.3
 * Bugfix: Add more variable checks to prevent crashes on flows that contain variables that are deleted.
 
 V0.0.2
-* Bugfix: Bug that prevented creating variables when app is first installed. 
+* Bugfix: Bug that prevented creating variables when app is first installed.
 
 V0.0.1
 * Initial release

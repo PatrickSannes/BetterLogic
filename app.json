@@ -39,6 +39,9 @@
         "title": {
           "en": "A variable changed"
         },
+        "hint": {
+          "en": "Triggers if a variable value changed."
+        },
         "args": [
           {
             "name": "variable",
@@ -54,6 +57,9 @@
         "title": {
           "en": "A variable is set"
         },
+        "hint": {
+          "en": "Triggers if a variable is set (not necessarily changed)"
+        },
         "args": [
           {
             "name": "variable",
@@ -68,6 +74,9 @@
         "id": "if_number_variable_changed",
         "title": {
           "en": "A number variable changed"
+        },
+        "hint": {
+          "en": "Triggers if a number variable is changed."
         },
         "args": [
           {
@@ -112,6 +121,9 @@
         "id": "if_one_of_variable_changed",
         "title": {
           "en": "One of these variables changed"
+        },
+        "hint": {
+          "en": "Type the variable names seperated by a comma.\nTags will not work in this card."
         },
         "args": [
           {

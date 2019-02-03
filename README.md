@@ -14,6 +14,9 @@ Any requests, please post them in https://community.athom.com/t/app-better-logic
 <img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
 </form>
 
+V1.0.4
+* Bug: Slider was limited from 0 to 1
+
 V1.0.3
 * Bug: Fixed new variables only showing up after the app
 * Bug: Updated styling of numslide pairing page

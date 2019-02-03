@@ -53,10 +53,10 @@ class NumSlideDriver extends Homey.Driver {
                 },
                 capabilitiesOptions: {
                     dim: {
-                        title:variable.name,
-                        min:myData.min,
-                        max: myData.max,
-                        step: myData.step
+                        title: variable.name,
+                        min: myData.min*1,
+                        max: myData.max*1,
+                        step: myData.step*1
                     }
                 }
             }

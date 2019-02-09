@@ -14,6 +14,10 @@ Any requests, please post them in https://community.athom.com/t/app-better-logic
 <img alt="" border="0" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
 </form>
 
+V1.0.5
+* Bug: Possible fix loading incorrect data from settings
+* Bug: App tried to create insights for strings which is not possible
+
 V1.0.4
 * Bug: Slider was limited from 0 to 1
 

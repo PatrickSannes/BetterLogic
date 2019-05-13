@@ -1,1 +1,31 @@
-{}
+{
+	"settings": {
+    "addVariable": "Add variable",
+    "variableName": "Variable name",
+    "variableType": "Variable type",
+	"selectType": "Select a value type",
+    "string": "String",
+    "boolean": "Boolean",
+    "number": "Number",
+    "trigger": "Trigger",
+    "storeInsight": "Store insight",
+    "variableValue": "Variable value",
+    "export": "Export",
+    "import": "Import",
+    "deleteAll": "Delete All",
+    "warningFlows": "*Be aware that removing variables could corrupt flows that are using that variable.",
+    "exportToggle": "<b>Exported values:</b><br/>Copy selection below to save your configuration offline.",
+    "importToggle": "<b>Import values:</b><br/>Paste in the box below the exported values. Be aware that all existing values and insights will be removed.",
+    "name": "Name",
+    "type": "Type",
+    "lastSet": "Last set",
+    "value": "Value",
+    "searchName": "search for name",
+    "edit": "Edit",
+	"edit": "Cancel",
+	"save": "Save",
+    "delete": "Delete",
+	"true": "true",
+	"false": "false"
+	}
+}

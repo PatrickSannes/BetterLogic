@@ -13,29 +13,29 @@
 <div>
 
     <div class="panel panel-default">
-        <div class="panel-heading">Add variable</div>
+        <div class="panel-heading" data-i18n="settings.addVariable"></div>
         <div class="panel-body">
             <form role="form">
                 <div class="form-group">
-                    <label for="variableName">Variable name</label>
+                    <label for="variableName" data-i18n="settings.variableName"></label>
                     <input class="form-control" id="variableName" type="text" ng-model="vm.newVariable.name" placeholder="Name"><span class="error">{{vm.errorMessage}}</span>
                 </div>
                 <div class="form-group">
-                    <label for="variableType">Variable type</label>
+                    <label for="variableType" data-i18n="settings.variableType"></label>
                     <select class="form-control" name="variableType" id="variableType" ng-model="vm.newVariable.type" ng-change="vm.selectUpdate(vm.newVariable.type)">
-                        <option value disbled="disabled" selected="selected">Select a value type</option>
-                        <option value="string">String</option>
-                        <option value="boolean">Boolean</option>
-                        <option value="number">Number</option>
-                        <option value="trigger">Trigger</option>
+                        <option value disbled="disabled" selected="selected" data-i18n="settings.selectType"></option>
+                        <option value="string" data-i18n="settings.string"></option>
+                        <option value="boolean" data-i18n="settings.boolean"></option>
+                        <option value="number" data-i18n="settings.number"></option>
+                        <option value="trigger" data-i18n="settings.trigger"></option>
                     </select>
                 </div>
                 <!--<div class="form-group">
-                    <label for="useInsight">Store insight</label>
+                    <label for="useInsight" data-i18n="settings.storeInsight"></label>
                     <input class="" id="useInsight" type="checkbox" ng-model="vm.newVariable.hasInsights" placeholder="Name"><span class="error">{{vm.errorMessage}}</span>
                 </div>-->
                 <div class="form-group">
-                    <label for="variableValue">Variable value</label>
+                    <label for="variableValue" data-i18n="settings.variableValue"></label>
                     <div ng-switch on="vm.newVariable.type">
                         <div ng-switch-when="boolean">
                             <div ng-include="'addboolean.html'"></div></div>
@@ -48,25 +48,23 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-default" type="button" ng-disabled="!vm.newVariable.name||!vm.newVariable.type" ng-click="vm.addVariable()">Add variable</button>
-                    <button class="btn btn-default" type="button" ng-click="vm.showExport()">Export</button>
-                    <button class="btn btn-default" type="button" ng-click="vm.showImport()">Import</button>
-                    <button class="btn btn-default" type="button" ng-click="vm.deleteAll()">Delete All</button>
+                    <button class="btn btn-default" type="button" ng-disabled="!vm.newVariable.name||!vm.newVariable.type" ng-click="vm.addVariable()" data-i18n="settings.addVariable"></button>
+                    <button class="btn btn-default" type="button" ng-click="vm.showExport()" data-i18n="settings.export"></button>
+                    <button class="btn btn-default" type="button" ng-click="vm.showImport()" data-i18n="settings.import"></button>
+                    <button class="btn btn-default" type="button" ng-click="vm.deleteAll()" data-i18n="settings.deleteAll"></button>
                 </div>
-                <h6>*Be aware that removing variables could corrupt flows that are using that variable.</h6>
+                <h6 data-i18n="settings.warningFlows"></h6>
             </form>
         </div>
     </div>
     <div ng-show="vm.showExportToggle">
-        <b>Exported values:</b><br/>
-        Copy selection below to save your configuration offline.
+        <p data-i18n="settings.exportToggle"></p>
         <p>
             <textarea rows="6" cols="60">{{vm.variables | json}}</textarea>
         </p>
     </div>
     <div ng-show="vm.showImportToggle">
-        <b>Import values:</b><br/>
-        Paste in the box below the exported values. Be aware that all existing values and insights will be removed.
+        <p data-i18n="settings.importToggle"></p>
         <p>
             <textarea rows="6" cols="60" ng-Model="vm.importJson"></textarea>
             <div class="form-group">
@@ -77,16 +75,16 @@
     <table st-safe-src="vm.variables" st-table="displayedCollection" class="table table-striped">
         <thead>
         <tr>
-            <th st-sort="name">Name</th>
-            <th st-sort="type">Type</th>
-            <th st-sort="lastChanged" st-sort-default="reverse">Last set</th>
+            <th st-sort="name" data-i18n="settings.name"></th>
+            <th st-sort="type" data-i18n="settings.type">Type</th>
+            <th st-sort="lastChanged" st-sort-default="reverse" data-i18n="settings.lastSet"></th>
             <!--<th st-sort="value">Insight</th>-->
-            <th st-sort="value">Value</th>
+            <th st-sort="value" data-i18n="settings.value"></th>
             <th></th>
         </tr>
         <tr>
             <th>
-                <input st-search="name" placeholder="search for name" class="input-sm form-control" type="search"/>
+                <input size="30" st-search="name" data-i18n-placeholder="settings.searchName" class="input-sm form-control" type="search"/>
             </th>
             <th>
             </th>
@@ -109,15 +107,15 @@
         <td>{{variable.lastChanged | date:'yyyy-MM-dd HH:mm:ss'}}</td>
         <!--<td><input type='checkbox' disabled ng-model='variable.hasInsights' /></td>-->
 
-        <td ng-if="variable.type === 'boolean'">{{variable.value}}</td>
+        <td ng-if="variable.type === 'boolean'">{{variable.value ? vm.i18nTrue : vm.i18nFalse}}</td>
         <td ng-if="variable.type === 'number'">{{variable.value}}</td>
         <td ng-if="variable.type === 'string'">{{variable.value}}</td>
         <td ng-if="variable.type === 'trigger'">{{variable.value | date:'yyyy-MM-dd HH:mm:ss'}}</td>
 
         <td>
-            <button ng-click="vm.editVariable(variable)" ng-if="variable.type !== 'trigger'">Edit</button>
-            <button ng-click="vm.triggerVariable(variable)" ng-if="variable.type === 'trigger'">Trigger</button>
-            <button ng-click="vm.removeVariable(variable)">Delete</button>
+            <button ng-click="vm.editVariable(variable)" ng-if="variable.type !== 'trigger'">{{vm.i18nEdit}}</button>
+            <button ng-click="vm.triggerVariable(variable)" ng-if="variable.type === 'trigger'" data-i18n="settings.trigger">{{vm.i18nTrigger}}</button>
+            <button ng-click="vm.removeVariable(variable)">{{vm.i18nDelete}}</button>
 
         </td>
     </script>
@@ -126,7 +124,7 @@
         <td>{{vm.selected.name}}</td>
         <td>{{vm.selected.type}}</td>
         <td>{{variable.lastChanged | date:'yyyy-MM-dd HH:mm:ss' }}</td>
-        <!--<td><input class="col-xs-2" id="variableValue" type="checkbox" ng-model="vm.selected.hasInsights" placeholder="value"></td>-->
+        <!--<td><input class="col-xs-2" id="variableValue" type="checkbox" ng-model="vm.selected.hasInsights" data-i18n-placeholder="settings.value"></td>-->
         <td>
             <div ng-switch on="vm.selected.type">
                 <div ng-switch-when="boolean"><div ng-include="'editboolean.html'"></div></div>
@@ -135,28 +133,28 @@
             </div>
         </td>
         <td>
-            <button ng-click="vm.saveVariable(variable)">Save</button>
-            <button ng-click="vm.reset()">Cancel</button>
+            <button ng-click="vm.saveVariable(variable)">{{vm.i18nSave}}</button>
+            <button ng-click="vm.reset()">{{vm.i18nCancel}}</button>
         </td>
     </script>
 
     <script type="text/ng-template" id="addnumber.html">
-        <input class="form-control" id="variableValue" type="number" ng-disabled="!vm.newVariable.name||!vm.newVariable.type" ng-model="vm.newVariable.value" placeholder="value">
+        <input class="form-control" id="variableValue" type="number" ng-disabled="!vm.newVariable.name||!vm.newVariable.type" ng-model="vm.newVariable.value" placeholder="{{vm.i18nValue}}">
     </script>
     <script type="text/ng-template" id="addstring.html">
-        <input class="form-control" id="variableValue" type="text" ng-disabled="!vm.newVariable.name||!vm.newVariable.type" ng-model="vm.newVariable.value" placeholder="value">
+        <input class="form-control" id="variableValue" type="text" ng-disabled="!vm.newVariable.name||!vm.newVariable.type" ng-model="vm.newVariable.value" placeholder="{{vm.i18nValue}}">
     </script>
     <script type="text/ng-template" id="addboolean.html">
-        <input id="variableValue" type="checkbox" ng-disabled="!vm.newVariable.name||!vm.newVariable.type" ng-model="vm.newVariable.value" placeholder="value">
+        <input id="variableValue" type="checkbox" ng-disabled="!vm.newVariable.name||!vm.newVariable.type" ng-model="vm.newVariable.value" placeholder="{{vm.i18nValue}}">
     </script>
     <script type="text/ng-template" id="editnumber.html">
-        <input class="form-control col-xs-2" id="variableValue" type="number" ng-model="vm.selected.value" placeholder="value">
+        <input class="form-control col-xs-2" id="variableValue" type="number" ng-model="vm.selected.value" placeholder="{{vm.i18nValue}}">
     </script>
     <script type="text/ng-template" id="editstring.html">
-        <input class="form-control col-xs-2" id="variableValue" type="text" ng-model="vm.selected.value" placeholder="value">
+        <input class="form-control col-xs-2" id="variableValue" type="text" ng-model="vm.selected.value" placeholder="{{vm.i18nValue}}">
     </script>
     <script type="text/ng-template" id="editboolean.html">
-        <input class="col-xs-2" id="variableValue" type="checkbox" ng-model="vm.selected.value" placeholder="value">
+        <input class="col-xs-2" id="variableValue" type="checkbox" ng-model="vm.selected.value" placeholder="{{vm.i18nValue}}">
     </script>
     <script>
         function onHomeyReady(Homey) {

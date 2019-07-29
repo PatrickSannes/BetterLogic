@@ -1,4 +1,4 @@
-﻿angular.module('variableApp', ['smart-table'])
+angular.module('variableApp', ['smart-table'])
     .controller('VariableSettingsController', function($scope) {
         var vm = this;
         vm.errorMessage = '';
@@ -10,6 +10,16 @@
 
         vm.init = function(homey, scope) {
             vm.homey = homey;
+            //Add language variables
+			vm.i18nEdit = Homey.__('settings.edit');
+			vm.i18nDelete = Homey.__('settings.delete');
+			vm.i18nSave = Homey.__('settings.save');
+			vm.i18nCancel = Homey.__('settings.cancel');
+			vm.i18nValue = Homey.__('settings.value');
+			vm.i18nTrigger = Homey.__('settings.trigger');
+			vm.i18nTrue = Homey.__('settings.true');
+			vm.i18nFalse = Homey.__('settings.false');
+            //End language variables
             vm.homey.get('variables', function(err, newVariables) {
                 console.log(newVariables);
                 if (!newVariables) {

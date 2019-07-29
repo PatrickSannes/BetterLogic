@@ -1,0 +1,31 @@
+{
+	"settings": {
+    "addVariable": "Variable hinzufügen",
+    "variableName": "Variablenname",
+    "variableType": "Variablentyp",
+	"selectType": "Variablentyp auswählen",
+    "string": "String",
+    "boolean": "Ja/Nein",
+    "number": "Zahl",
+    "trigger": "Trigger",
+    "storeInsight": "Insights speichern",
+    "variableValue": "Variablenwert",
+    "export": "Export",
+    "import": "Import",
+    "deleteAll": "Alles löschen",
+    "warningFlows": "*Achtung, das Entfernen von Variablen kann die Flows, die diese Variable verwenden, beschädigen.",
+    "exportToggle": "<b>Exportierte Werte:</b><br/>Kopiere die Auswahl unten, um deine  Konfiguration offline zu speichern.",
+    "importToggle": "<b>Importierte Werte:</b><br/>Füge in das Feld die exportierten Werten ein. Beachte, dass alle vorhandenen Werte und Insights entfernt werden.",
+    "name": "Name",
+    "type": "Typ",
+    "lastSet": "Letzte Änderung",
+    "value": "Wert",
+    "searchName": "Suche nach Name",
+    "edit": "Bearbeiten",
+	"cancel": "Abbrechen",
+	"save": "Speichern",
+    "delete": "Löschen",
+	"true": "Ja",
+	"false": "Nein"
+	}
+}

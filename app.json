@@ -4,10 +4,12 @@
   "compatibility": ">=2.0.0",
   "sdk": 2,
   "name": {
-    "en": "Better Logic"
+    "en": "Better Logic",
+    "de": "Bessere Logik"
   },
   "description": {
-    "en": "Just some better logic"
+    "en": "Just some better logic",
+    "de": "Einfach nur bessere Logik"
   },
   "category": [
     "tools"
@@ -37,17 +39,20 @@
       {
         "id": "if_variable_changed",
         "title": {
-          "en": "A variable changed"
+          "en": "A variable changed",
+          "de": "Eine Variable hat sich geändert"
         },
         "hint": {
-          "en": "Triggers if a variable value changed."
+          "en": "Triggers if a variable value changed.",
+          "de": "Löst aus wenn sich eine Variable geändert hat"
         },
         "args": [
           {
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
-              "en": "Variable name"
+              "en": "Variable name",
+              "de": "Variablenname"
             }
           }
         ]
@@ -55,17 +60,20 @@
       {
         "id": "if_variable_set",
         "title": {
-          "en": "A variable is set"
+          "en": "A variable is set",
+          "de": "Eine Variable wurde gesetzt"
         },
         "hint": {
-          "en": "Triggers if a variable is set (not necessarily changed)"
+          "en": "Triggers if a variable is set (not necessarily changed)",
+          "de": "Löst aus wenn eine Variable gesetzt wurde (nicht unbedingt geändert)"
         },
         "args": [
           {
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
-              "en": "Variable name"
+              "en": "Variable name",
+              "de": "Variablenname"
             }
           }
         ]
@@ -73,17 +81,20 @@
       {
         "id": "if_number_variable_changed",
         "title": {
-          "en": "A number variable changed"
+          "en": "A number variable changed",
+          "de": "Eine numerische Variable hat sich geändert"
         },
         "hint": {
-          "en": "Triggers if a number variable is changed."
+          "en": "Triggers if a number variable is changed.",
+          "de": "Löst aus wenn sich eine numerische Variable geändert hat"
         },
         "args": [
           {
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
-              "en": "Variable name"
+              "en": "Variable name",
+              "de": "Variablenname"
             }
           },
           {
@@ -92,19 +103,20 @@
             "values": [
               {
                 "id": "changed",
-                "label": { "en": "min. changed by" }
+                "label": { "en": "min. changed by", "de": "Min. geändert um" }
               },
               {
                 "id": "increased",
-                "label": { "en": "min. increased with" }
+                "label": { "en": "min. increased with", "de": "Min. erhöht um" }
               },
               {
                 "id": "decreased",
-                "label": { "en": "min. decreased with" }
+                "label": { "en": "min. decreased with", "de": "Min. verringert um" }
               }
             ],
             "placeholder": {
-              "en": "Select action"
+              "en": "Select action",
+              "de": "Aktion auswählen"
             }
           },
           {
@@ -112,7 +124,8 @@
             "type": "number",
             "step": 0.01,
             "placeholder": {
-              "en": "Variable name"
+              "en": "Variable name",
+              "de": "Variablenname"
             }
           }
         ]
@@ -120,17 +133,20 @@
       {
         "id": "if_one_of_variable_changed",
         "title": {
-          "en": "One of these variables changed"
+          "en": "One of these variables changed",
+          "de": "Eine der Variablen hat sich geändert"
         },
         "hint": {
-          "en": "Type the variable names seperated by a comma.\nTags will not work in this card."
+          "en": "Type the variable names seperated by a comma.\nTags will not work in this card.",
+          "de": "Gebe die Variablennamen getrennt von einem Komma ein.\nTags werden hier nicht funktionieren."
         },
         "args": [
           {
             "name": "variable",
             "type": "text",
             "placeholder": {
-              "en": "Var1, Var2, Var3"
+              "en": "Var1, Var2, Var3",
+              "de": "Var1, Var2, Var3"
             }
           }
         ]
@@ -138,7 +154,8 @@
       {
         "id": "debug_any_variable_changed",
         "title": {
-          "en": "Any variable changed (DEBUG)"
+          "en": "Any variable changed (DEBUG)",
+          "de": "Beliebige Variable hat sich geändert (DEBUG)"
         }
       }
     ],
@@ -146,21 +163,24 @@
       {
         "id": "variable_contains",
         "title": {
-          "en": "!{{Text contains|Text does not contain}}"
+          "en": "!{{Text contains|Text does not contain}}",
+          "de": "!{{Text enthält|Text enthält nicht}}"
         },
         "args": [
           {
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
-              "en": "value"
+              "en": "value",
+              "de": "Wert"
             }
           },
           {
             "name": "value",
             "type": "text",
             "placeholder": {
-              "en": "value"
+              "en": "value",
+              "de": "Wert"
             }
           }
         ]
@@ -168,21 +188,24 @@
       {
         "id": "variable_starts_with",
         "title": {
-          "en": "!{{Text starts with|Text does not start with}}"
+          "en": "!{{Text starts with|Text does not start with}}",
+          "de": "!{{Text beginnt mit|Text beginnt nicht mit}}"
         },
         "args": [
           {
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
-              "en": "value"
+              "en": "value",
+              "de": "Wert"
             }
           },
           {
             "name": "value",
             "type": "text",
             "placeholder": {
-              "en": "value"
+              "en": "value",
+              "de": "Wert"
             }
           }
         ]
@@ -190,21 +213,24 @@
       {
         "id": "variable_matches_string",
         "title": {
-          "en": "!{{Text is exact|Text is not exactly}}"
+          "en": "!{{Text is exact|Text is not exactly}}",
+          "de": "!{{Text ist exakt|Text ist nicht exakt}}"
         },
         "args": [
           {
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
-              "en": "value"
+              "en": "value",
+              "de": "Wert"
             }
           },
           {
             "name": "value",
             "type": "text",
             "placeholder": {
-              "en": "value"
+              "en": "value",
+              "de": "Wert"
             }
           }
         ]
@@ -212,14 +238,16 @@
       {
         "id": "variable_matches_number",
         "title": {
-          "en": "!{{Number is exact|Number is not exactly}}"
+          "en": "!{{Number is exact|Number is not exactly}}",
+          "de": "!{{Zahl ist exakt|Zahl ist nicht exakt}}"
         },
         "args": [
           {
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
-              "en": "value"
+              "en": "value",
+              "de": "Wert"
             }
           },
           {
@@ -227,7 +255,8 @@
             "type": "number",
             "step": 0.01,
             "placeholder": {
-              "en": "value"
+              "en": "value",
+              "de": "Wert"
             }
           }
         ]
@@ -235,14 +264,16 @@
       {
         "id": "variable_greater_than",
         "title": {
-          "en": "!{{|not}} greater than"
+          "en": "!{{|not}} greater than",
+          "de": "!{{Größer als|Nicht größer als}}"
         },
         "args": [
           {
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
-              "en": "value"
+              "en": "value",
+              "de": "Wert"
             }
           },
           {
@@ -250,7 +281,8 @@
             "type": "number",
             "step": 0.01,
             "placeholder": {
-              "en": "value"
+              "en": "value",
+              "de": "Wert"
             }
           }
         ]
@@ -258,14 +290,16 @@
       {
         "id": "variable_less_than",
         "title": {
-          "en": "!{{|not}} less than"
+          "en": "!{{|not}} less than",
+          "de": "!{{Kleiner als|Nicht kleiner als}}"
         },
         "args": [
           {
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
-              "en": "value"
+              "en": "value",
+              "de": "Wert"
             }
           },
           {
@@ -273,7 +307,8 @@
             "type": "number",
             "step": 0.01,
             "placeholder": {
-              "en": "value"
+              "en": "value",
+              "de": "Wert"
             }
           }
         ]
@@ -281,14 +316,16 @@
       {
         "id": "variable_is_equal",
         "title": {
-          "en": "!{{is true|is false}}"
+          "en": "!{{is true|is false}}",
+          "de": "!{{Ist Ja|Ist Nein}}"
         },
         "args": [
           {
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
-              "en": "value"
+              "en": "value",
+              "de": "Wert"
             }
           }
         ]
@@ -296,14 +333,16 @@
       {
         "id": "expression",
         "title": {
-          "en": "Math.js expression !{{is true|is false}}"
+          "en": "Math.js expression !{{is true|is false}}",
+          "de": "Math.js expression !{{ist wahr|ist falsch}}"
         },
         "args": [
           {
             "name": "expression",
             "type": "text",
             "placeholder": {
-              "en": "$v1$ > 100 and $v1$ < 200 and $b1$"
+              "en": "$v1$ > 100 and $v1$ < 200 and $b1$",
+              "de": "$v1$ > 100 and $v1$ < 200 and $b1$"
             }
           }
         ]
@@ -313,21 +352,24 @@
       {
         "id": "set_string_variable",
         "title": {
-          "en": "Set string variable"
+          "en": "Set string variable",
+          "de": "Setze Stringvariable"
         },
         "args": [
           {
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
-              "en": "name"
+              "en": "name",
+              "de": "Name"
             }
           },
           {
             "name": "value",
             "type": "text",
             "placeholder": {
-              "en": "value"
+              "en": "value",
+              "de": "Wert"
             }
           }
         ]
@@ -335,14 +377,16 @@
       {
         "id": "set_number_variable",
         "title": {
-          "en": "Set number variable"
+          "en": "Set number variable",
+          "de": "Setze numerische Variable"
         },
         "args": [
           {
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
-              "en": "name"
+              "en": "name",
+              "de": "Name"
             }
           },
           {
@@ -350,7 +394,8 @@
             "type": "number",
             "step": 0.01,
             "placeholder": {
-              "en": "value"
+              "en": "value",
+              "de": "Wert"
             }
           }
         ]
@@ -358,14 +403,16 @@
       {
         "id": "increment_number_variable",
         "title": {
-          "en": "Increment number variable"
+          "en": "Increment number variable",
+          "de": "Erhöhe numerische Variable"
         },
         "args": [
           {
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
-              "en": "name"
+              "en": "name",
+              "de": "Name"
             }
           },
           {
@@ -373,7 +420,8 @@
             "type": "number",
             "step": 0.01,
             "placeholder": {
-              "en": "value"
+              "en": "value",
+              "de": "Wert"
             }
           }
         ]
@@ -381,14 +429,16 @@
       {
         "id": "decrement_number_variable",
         "title": {
-          "en": "Decrement number variable"
+          "en": "Decrement number variable",
+          "de": "Verringere numerische Variable"
         },
         "args": [
           {
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
-              "en": "name"
+              "en": "name",
+              "de": "Name"
             }
           },
           {
@@ -396,7 +446,8 @@
             "type": "number",
             "step": 0.01,
             "placeholder": {
-              "en": "value"
+              "en": "value",
+              "de": "Wert"
             }
           }
         ]
@@ -404,21 +455,24 @@
       {
         "id": "execute_expression",
         "title": {
-          "en": "Execute mathjs expression"
+          "en": "Execute mathjs expression",
+          "de": "Ausführen von einer mathjs expression"
         },
         "args": [
           {
             "name": "expression",
             "type": "text",
             "placeholder": {
-              "en": "($n1$ * 42) + 1"
+              "en": "($n1$ * 42) + 1",
+              "de": "($n1$ * 42) + 1"
             }
           },
           {
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
-              "en": "name"
+              "en": "name",
+              "de": "Name"
             }
           }
         ]
@@ -426,14 +480,16 @@
       {
         "id": "set_boolean_variable",
         "title": {
-          "en": "Set boolean variable"
+          "en": "Set boolean variable",
+          "de": "Eine Ja/Nein Variable setzen"
         },
         "args": [
           {
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
-              "en": "name"
+              "en": "name",
+              "de": "Name"
             }
           },
           {
@@ -442,11 +498,11 @@
             "values": [
               {
                 "id": "true",
-                "label": { "en": "True" }
+                "label": { "en": "True", "de": "Ja" }
               },
               {
                 "id": "false",
-                "label": { "en": "False" }
+                "label": { "en": "False", "de": "Nein" }
               }
             ]
           }
@@ -455,14 +511,16 @@
       {
         "id": "flip_boolean_variable",
         "title": {
-          "en": "Flip boolean variable"
+          "en": "Flip boolean variable",
+          "de": "Eine Ja/Nein Variable umschalten"
         },
         "args": [
           {
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
-              "en": "name"
+              "en": "name",
+              "de": "Name"
             }
           }
         ]
@@ -470,14 +528,16 @@
       {
         "id": "trigger_variable",
         "title": {
-          "en": "Execute a trigger"
+          "en": "Execute a trigger",
+          "de": "Ein Trigger auslösen"
         },
         "args": [
           {
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
-              "en": "name"
+              "en": "name",
+              "de": "Name"
             }
           }
         ]
@@ -485,21 +545,24 @@
       {
         "id": "set_a_variable",
         "title": {
-          "en": "Set a variable"
+          "en": "Set a variable",
+          "de": "Eine variable setzen"
         },
         "args": [
           {
             "name": "variable",
             "type": "autocomplete",
             "placeholder": {
-              "en": "name"
+              "en": "name",
+              "de": "Name"
             }
           },
           {
             "name": "value",
             "type": "text",
             "placeholder": {
-              "en": "value"
+              "en": "value",
+              "de": "Wert"
             }
           }
         ]
@@ -511,7 +574,8 @@
     {
       "id": "bitflip",
       "name": {
-        "en": "BitFlip"
+        "en": "BitFlip",
+        "de": "BitFlip"
       },
       "images": {
         "large": "drivers/bitflip/assets/images/large.jpg",
@@ -536,7 +600,8 @@
     {
       "id": "numslide",
       "name": {
-        "en": "NumSlide"
+        "en": "NumSlide",
+        "de": "NumSlide"
       },
       "images": {
         "large": "drivers/numslide/assets/images/large.jpg",
@@ -581,7 +646,8 @@
     {
       "id": "trigger",
       "name": {
-        "en": "Trigger"
+        "en": "Trigger",
+        "de": "Trigger"
       },
       "images": {
         "large": "drivers/trigger/assets/images/large.jpg",
